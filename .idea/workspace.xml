@@ -97,8 +97,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06351183">
-              <caret line="613" column="30" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.24283935">
+              <caret line="615" column="13" selection-start-line="615" selection-start-column="13" selection-end-line="615" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -141,8 +141,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="160" />
-    <option name="y" value="237" />
+    <option name="x" value="108" />
+    <option name="y" value="116" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -342,11 +342,17 @@
       <option name="project" value="LOCAL" />
       <updated>1522726513455</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="201804031112">
+      <created>1522726570123</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1522726570123</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="160" y="237" width="1400" height="1000" extended-state="0" />
+    <frame x="108" y="116" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -393,7 +399,8 @@
     <MESSAGE value="201804031109" />
     <MESSAGE value="201804031110" />
     <MESSAGE value="201804031111" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804031111" />
+    <MESSAGE value="201804031112" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804031112" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -796,8 +803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06351183">
-          <caret line="613" column="30" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.24283935">
+          <caret line="615" column="13" selection-start-line="615" selection-start-column="13" selection-end-line="615" selection-end-column="13" />
           <folding />
         </state>
       </provider>
