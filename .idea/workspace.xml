@@ -107,8 +107,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43663594">
-              <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.16589862">
+              <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -318,7 +318,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522725527848</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="201804031106">
+      <created>1522725559193</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1522725559193</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -363,7 +369,8 @@
     <MESSAGE value="更换主题2" />
     <MESSAGE value="201804031102" />
     <MESSAGE value="201804031105" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804031105" />
+    <MESSAGE value="201804031106" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804031106" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -772,8 +779,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43663594">
-          <caret line="138" column="20" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.16589862">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
