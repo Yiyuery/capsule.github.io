@@ -14,7 +14,7 @@ tags:
 
 ---
 
-## 一、准备工作
+## 准备工作
 
 > 1、flowable-modeler 获取
 
@@ -82,7 +82,7 @@ public class FlowableModelerRestController {
 
 ![这里写图片描述](http://img.blog.csdn.net/20180312110352471?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-## 二、app-rest接口导入和破解
+## app-rest接口导入和破解
 
 由于flowable-modeler的流程设计器页面很多操作会访问后台接口，在非maven的框架下，有人是通过导入jar包来实现的，在maven的框架下，我采用导入jar包源码并覆盖扫描的方式来实现后台servlet接口的实现。
 
@@ -160,7 +160,7 @@ public class FlowableModelerRestController {
 	
 ![这里写图片描述](http://img.blog.csdn.net/20180312111737357?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
-## 效果：
+## 效果
 
 ![这里写图片描述](http://img.blog.csdn.net/20180312111851915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
