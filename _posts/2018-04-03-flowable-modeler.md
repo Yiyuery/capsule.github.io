@@ -113,6 +113,7 @@ public class FlowableModelerRestController {
  
  
 	> web.xml 添加路由映射
+	
 ```
 /*在web.xml中添加路由映射*/
 <!-- 配置Spring核心控制器 -->
@@ -150,6 +151,7 @@ public class FlowableModelerRestController {
      <url-pattern>/app/*</url-pattern>
  </servlet-mapping>
 ```
+
 	> 添加配置：扫描注入
 	
 ![这里写图片描述](http://img.blog.csdn.net/20180312111527309?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
