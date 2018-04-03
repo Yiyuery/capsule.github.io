@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -336,7 +335,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522725780350</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="201804031109">
+      <created>1522726223527</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1522726223527</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -384,7 +389,8 @@
     <MESSAGE value="201804031106" />
     <MESSAGE value="201804031107" />
     <MESSAGE value="201804031108" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804031108" />
+    <MESSAGE value="201804031109" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804031109" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
