@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md" afterPath="$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -30,8 +31,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.44372573">
-              <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.13971539">
+              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -53,8 +54,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.12048193">
-                <caret line="470" column="0" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
+              <first_editor vertical-scroll-proportion="0.26506025">
+                <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -447,7 +448,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522771350419</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="201804032359">
+      <created>1522771409664</created>
+      <option name="number" value="00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1522771409664</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -509,7 +516,8 @@
     <MESSAGE value="201804032356" />
     <MESSAGE value="201804032357" />
     <MESSAGE value="201804032358" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804032358" />
+    <MESSAGE value="201804032359" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804032359" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -876,8 +884,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.12048193">
-            <caret line="470" column="0" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
+          <first_editor vertical-scroll-proportion="0.26506025">
+            <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
             <folding />
           </first_editor>
           <second_editor />
@@ -889,8 +897,8 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.44372573">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.13971539">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
           <folding />
         </state>
       </provider>

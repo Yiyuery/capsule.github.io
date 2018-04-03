@@ -7,6 +7,9 @@ tags:
 - flowable
 ---
 
+本教程基于Flowable 6.2.1 ，破解 flowable-idm的权限登录，整合SpringMVC实现maven动态导入jar包，期间遇坑无数，写下此文，还望对各位学习工作流的小伙伴有所帮助！
+
+---
 
 # Flowable 与 modeler 流程设计器整合
 
