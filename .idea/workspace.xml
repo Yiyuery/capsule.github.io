@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -53,8 +53,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.022332506">
-                <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+              <first_editor vertical-scroll-proportion="0.5903614">
+                <caret line="546" column="17" selection-start-line="546" selection-start-column="17" selection-end-line="546" selection-end-column="17" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -423,7 +423,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522769553203</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="201804032356">
+      <created>1522771057700</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1522771057700</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -482,7 +488,8 @@
     <MESSAGE value="201804032328" />
     <MESSAGE value="201804032329" />
     <MESSAGE value="201804032330" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804032330" />
+    <MESSAGE value="201804032356" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804032356" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -869,8 +876,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.022332506">
-            <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <first_editor vertical-scroll-proportion="0.5903614">
+            <caret line="546" column="17" selection-start-line="546" selection-start-column="17" selection-end-line="546" selection-end-column="17" />
             <folding />
           </first_editor>
           <second_editor />

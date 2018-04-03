@@ -18,14 +18,14 @@ Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分�
 
 # 二、Dubbo框架搭建
 
-## 1、运行环境
+## 运行环境
 
     > Spring Boot
     > zookeeper-3.3.6 9
     > dubbo 2.5.4
     > jdk 1.7
 
-## 2、maven依赖
+## maven依赖
 
 > 项目结构
 
@@ -355,7 +355,7 @@ Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分�
 
 ```
 
-## 3.项目核心代码
+## 项目核心代码
 
     > 接口定义层 spring-boot-api
     
@@ -427,7 +427,7 @@ public class HiController {
 }
 
 ```
-## 4.zookeeper下载和安装
+## zookeeper下载和安装
     
     http://mirror.bit.edu.cn/apache/zookeeper/
     
@@ -467,7 +467,7 @@ clientPort=2181
     
     
 
-## 5.项目部署和启动
+## 项目部署和启动
 
 > 配置调整
 
@@ -488,7 +488,7 @@ spring-boot可以直接通过appication的启动类来启动项目，但是由�
 ![image](http://img.blog.csdn.net/20180225164506439?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
-## 6、provider和consumer xml
+## provider和consumer xml
 
 > provider
 
@@ -544,7 +544,7 @@ spring-boot可以直接通过appication的启动类来启动项目，但是由�
 </beans>
 
 ```
-## 7、dubbo部署中发现的小特点
+## dubbo部署中发现的小特点
 
 - 1、已注册和订阅过的服务再关闭注册中心后仍然保持正常使用状态
 - 2、消费者不用。在提供者挂掉的时候，消费端访问提供者的服务会报错。提供者重启后，只要提供者注册到zookeeper，并且提供者在重启前后的服务签名（方法名、参数、返回值）没有发生变化，客户端仍然可以正常访问提供者的服务
