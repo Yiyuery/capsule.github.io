@@ -240,7 +240,7 @@ social_icons:
 # in directory: /assets/images/avatar.gif
 #avatar:
 # 设置头像
-avatar:/uploads/avatar.png
+avatar: /assets/images/avatar.png
 
 # Table Of Contents in the Sidebar
 toc:
