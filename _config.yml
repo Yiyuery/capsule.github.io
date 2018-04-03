@@ -78,7 +78,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "Yiyuery, xiazhaoyang"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -214,6 +214,13 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 #social:
   #LinkLabel: Link
+
+# Social links
+social:
+  GitHub: https://github.com/Yiyuery
+  微博: https://weibo.com/u/3213365542
+  豆瓣: https://www.douban.com/people/yiyuery/
+  知乎: https://www.zhihu.com/people/xia-zhao-yang-24/activities
 
 
 # Social Links Icons
