@@ -85,8 +85,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.13203214">
-                <caret line="512" column="5" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
+              <first_editor vertical-scroll-proportion="-0.11083744">
+                <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -518,7 +518,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522773202451</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="20180404003201">
+      <created>1522773340211</created>
+      <option name="number" value="00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1522773340211</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -557,7 +563,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="201804031002" />
     <MESSAGE value="更换主题" />
     <MESSAGE value="更换主题2" />
     <MESSAGE value="201804031102" />
@@ -582,7 +587,8 @@
     <MESSAGE value="201804032359" />
     <MESSAGE value="20180404001100" />
     <MESSAGE value="20180404003200" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180404003200" />
+    <MESSAGE value="20180404003201" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180404003201" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -983,8 +989,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.13203214">
-            <caret line="512" column="5" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
+          <first_editor vertical-scroll-proportion="-0.11083744">
+            <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />

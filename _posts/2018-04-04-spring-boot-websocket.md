@@ -158,6 +158,7 @@ public class WsController {
 > 建立连接和主题推送
  
 ```     
+
 /*连接、订阅主题回调*/
  function connect() {
         var socket = new SockJS('/endpointSang');
@@ -177,6 +178,7 @@ public class WsController {
         console.log('name:' + name);
         stompClient.send("/hello", {}, JSON.stringify({'name': name}));
     }
+    
 ```
 
 ## 推送框架设计
@@ -192,6 +194,7 @@ public class WsController {
 > service
 
 ```
+
 /**
  * 消息推送服务
  */
@@ -202,6 +205,7 @@ interface NOTIFY{
      */
     void notice(NoticeVO noticeVO);
 }
+
 ```
 
 > impl
