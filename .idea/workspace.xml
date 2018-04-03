@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -46,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-03-spring-boot-dubbo.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-04-03-spring-boot-dubbo.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
@@ -55,6 +55,22 @@
             <state split_layout="FIRST">
               <first_editor vertical-scroll-proportion="0.16867469">
                 <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-04-04-springmvc-swagger-rest.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md">
+          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.20099255">
+                <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -89,6 +105,7 @@
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md" />
       </list>
     </option>
   </component>
@@ -100,8 +117,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="482" />
-    <option name="y" value="173" />
+    <option name="x" value="104" />
+    <option name="y" value="597" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -234,6 +251,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yiyuery\Documents\GitHub\capsule.github.io\_posts" />
       <recent name="C:\Users\Yiyuery\Documents\GitHub\capsule.github.io\sources\uploads" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -459,11 +477,17 @@
       <option name="project" value="LOCAL" />
       <updated>1522771570286</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="201804032359">
+      <created>1522771642506</created>
+      <option name="number" value="00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1522771642506</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="482" y="173" width="1400" height="1000" extended-state="0" />
+    <frame x="104" y="597" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -529,13 +553,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_layouts/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -911,6 +928,20 @@
         <state split_layout="FIRST">
           <first_editor vertical-scroll-proportion="0.16867469">
             <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.20099255">
+            <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
             <folding />
           </first_editor>
           <second_editor />
