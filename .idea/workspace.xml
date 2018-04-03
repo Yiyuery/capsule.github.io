@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\Yiyuery\Documents\GitHub\capsule.github.io\sources\uploads\avatar.png" afterPath="$PROJECT_DIR$/assets/images/avatar.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -98,8 +97,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2552927">
-              <caret line="242" column="33" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.06351183">
+              <caret line="613" column="30" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -331,7 +330,19 @@
       <option name="project" value="LOCAL" />
       <updated>1522726237953</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="201804031110">
+      <created>1522726404804</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1522726404804</updated>
+    </task>
+    <task id="LOCAL-00014" summary="201804031111">
+      <created>1522726513455</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1522726513455</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -380,7 +391,9 @@
     <MESSAGE value="201804031107" />
     <MESSAGE value="201804031108" />
     <MESSAGE value="201804031109" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804031109" />
+    <MESSAGE value="201804031110" />
+    <MESSAGE value="201804031111" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804031111" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -783,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2552927">
-          <caret line="242" column="33" selection-start-line="242" selection-start-column="33" selection-end-line="242" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.06351183">
+          <caret line="613" column="30" selection-start-line="613" selection-start-column="30" selection-end-line="613" selection-end-column="30" />
           <folding />
         </state>
       </provider>
