@@ -6,7 +6,7 @@
 # Site
 title: Yiyuery's Blog
 subtitle:
-description:
+description:易余心之所善兮，虽九死其犹未悔！
 author: X Yiyuery
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
@@ -83,7 +83,7 @@ keywords: "Yiyuery, xiazhaoyang"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss:false
 
 # Specify the date when the site was setup
 #since: 2015
@@ -368,7 +368,7 @@ highlight_theme: normal
 
 # MathJax Support
 mathjax:
-  enable: false
+  enable: true
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
@@ -380,6 +380,8 @@ han: false
 
 # Baidu Analytics ID
 #baidu_analytics:
+# 百度统计
+baidu_analytics:08dce3f31be6967c8b93bf7fff23e584
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -566,7 +568,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -615,10 +617,10 @@ canvas_nest: false
 
 # 背景动画
 # three_waves
-three_waves: true
+three_waves: false
 
 # canvas_lines
-canvas_lines: false
+canvas_lines: true
 
 # canvas_sphere
 canvas_sphere: false
