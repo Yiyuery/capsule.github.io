@@ -12,7 +12,9 @@ WebSocket为浏览器和服务器之间提供了双工异步通信功能，也�
 
 ---
 
-# Maven pom
+# Spring Boot 整合 WebSocket 开发笔记
+
+## Maven pom
 
 ```
 <dependency>
@@ -21,7 +23,7 @@ WebSocket为浏览器和服务器之间提供了双工异步通信功能，也�
 </dependency>
 ```
 
-# Configuration
+## Configuration
 
 ```
 package cn.com.showclear.config;
@@ -67,7 +69,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 
 ```
 
-# Controller
+## Controller
 
 > 消息体
 
@@ -147,7 +149,7 @@ public class WsController {
 
 ```
 
-# 前端脚本
+## 前端脚本
     
     1、STOMP协议的客户端脚本stomp.js、
     2、SockJS的客户端脚本sock.js
@@ -177,9 +179,7 @@ public class WsController {
     }
 ```
 
----
-
-# 推送框架设计
+## 推送框架设计
 
 > 不使用@SendTo注解，通过SimpMessagingTemplate完成消息推送服务层的搭建，
    

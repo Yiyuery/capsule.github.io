@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" afterPath="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -86,8 +85,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.0413318">
-                <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+              <first_editor vertical-scroll-proportion="0.13203214">
+                <caret line="512" column="5" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -513,7 +512,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522773179136</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="20180404003200">
+      <created>1522773202451</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1522773202451</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -978,8 +983,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0413318">
-            <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <first_editor vertical-scroll-proportion="0.13203214">
+            <caret line="512" column="5" selection-start-line="512" selection-start-column="5" selection-end-line="512" selection-end-column="5" />
             <folding />
           </first_editor>
           <second_editor />
