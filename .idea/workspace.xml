@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="20180404001100">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
+    <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" afterPath="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -53,8 +54,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.16867469">
-                <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <first_editor vertical-scroll-proportion="0.022167487">
+                <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -69,7 +70,7 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.20099255">
+              <first_editor vertical-scroll-proportion="0.1859931">
                 <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
                 <folding />
               </first_editor>
@@ -85,8 +86,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.1653272">
-                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <first_editor vertical-scroll-proportion="0.0413318">
+                <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -120,8 +121,8 @@
       <list>
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md" />
-        <option value="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
       </list>
     </option>
@@ -506,7 +507,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522772625615</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="20180404003200">
+      <created>1522773179136</created>
+      <option name="number" value="00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1522773179136</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -545,7 +552,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="201804030951" />
     <MESSAGE value="201804031002" />
     <MESSAGE value="更换主题" />
     <MESSAGE value="更换主题2" />
@@ -570,7 +576,8 @@
     <MESSAGE value="201804032358" />
     <MESSAGE value="201804032359" />
     <MESSAGE value="20180404001100" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180404001100" />
+    <MESSAGE value="20180404003200" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180404003200" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -917,6 +924,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.1859931">
+            <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.022167487">
+            <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md">
       <provider editor-type-id="MultiMarkdownFxPreviewEditor">
         <state />
@@ -937,42 +972,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.16867469">
-            <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md">
-      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-        <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.20099255">
-            <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md">
       <provider editor-type-id="MultiMarkdownFxPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.1653272">
-            <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <first_editor vertical-scroll-proportion="0.0413318">
+            <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             <folding />
           </first_editor>
           <second_editor />

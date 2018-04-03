@@ -1,5 +1,5 @@
 ---
-title: Spring Boot 整合WebSocket开发笔记
+title: Spring Boot 整合 WebSocket 开发笔记
 date: 2018-04-04 00:28:00
 categories:
 - WebSocket

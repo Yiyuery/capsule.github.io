@@ -1,5 +1,5 @@
 ---
-title: Spring Boot 整合Dubbo开发笔记
+title: Spring Boot 整合 Dubbo 开发笔记
 date: 2018-04-03 23:56:00
 categories:
 - Dubbo
