@@ -85,6 +85,7 @@ public class FlowableModelerRestController {
 ## 二、app-rest接口导入和破解
 
 由于flowable-modeler的流程设计器页面很多操作会访问后台接口，在非maven的框架下，有人是通过导入jar包来实现的，在maven的框架下，我采用导入jar包源码并覆盖扫描的方式来实现后台servlet接口的实现。
+
 > 1、pom
 
 ```
@@ -150,12 +151,15 @@ public class FlowableModelerRestController {
  </servlet-mapping>
 ```
 	> 添加配置：扫描注入
+	
 ![这里写图片描述](http://img.blog.csdn.net/20180312111527309?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 	> 汉化：主要是修改stencilset_bpmn.json文件（百度一下可以找到很多）
+	
 ![这里写图片描述](http://img.blog.csdn.net/20180312111737357?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ## 效果：
+
 ![这里写图片描述](http://img.blog.csdn.net/20180312111851915?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ![这里写图片描述](http://img.blog.csdn.net/20180312111859637?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -170,7 +174,9 @@ public class FlowableModelerRestController {
 > 参考
 
 ```
+
 # 基本知识
+
     1、c3p0 Spring 配置
     http://blog.csdn.net/l1028386804/article/details/51162560
     2、Flowable基础五 Flowable 数据库配置
