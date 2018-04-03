@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md" />
+    <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="20180404001100">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -62,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-04-springmvc-swagger-rest.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-04-04-springmvc-swagger-rest.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
@@ -71,6 +71,22 @@
             <state split_layout="FIRST">
               <first_editor vertical-scroll-proportion="0.20099255">
                 <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-04-04-spring-boot-websocket.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md">
+          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.1653272">
+                <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -106,6 +122,7 @@
         <option value="$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
       </list>
     </option>
   </component>
@@ -117,10 +134,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="104" />
-    <option name="y" value="597" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="23" />
+    <option name="width" value="1936" />
+    <option name="height" value="1065" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -483,14 +500,20 @@
       <option name="project" value="LOCAL" />
       <updated>1522771642506</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="20180404001100">
+      <created>1522772625615</created>
+      <option name="number" value="00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1522772625615</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="104" y="597" width="1400" height="1000" extended-state="0" />
+    <frame x="-8" y="23" width="1936" height="1065" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -546,20 +569,14 @@
     <MESSAGE value="201804032357" />
     <MESSAGE value="201804032358" />
     <MESSAGE value="201804032359" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804032359" />
+    <MESSAGE value="20180404001100" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180404001100" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_layouts/page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/layout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.25">
@@ -942,6 +959,20 @@
         <state split_layout="FIRST">
           <first_editor vertical-scroll-proportion="0.20099255">
             <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md">
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.1653272">
+            <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             <folding />
           </first_editor>
           <second_editor />
