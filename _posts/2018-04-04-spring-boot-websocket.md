@@ -17,15 +17,18 @@ WebSocket为浏览器和服务器之间提供了双工异步通信功能，也�
 ## Maven pom
 
 ```
+
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-websocket</artifactId>
 </dependency>
+
 ```
 
 ## Configuration
 
 ```
+
 package cn.com.showclear.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -74,7 +77,9 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 > 消息体
 
     1、RequestMessage
+    
 ```
+
 package cn.com.showclear.common.utils;
 
 /**
@@ -94,7 +99,9 @@ public class RequestMessage {
 ```
 
     2、ResponseMessage
+    
 ```
+
 package cn.com.showclear.common.utils;
 
 /**
@@ -120,6 +127,7 @@ public class ResponseMessage {
 > 请求控制器
 
 ```
+
 package cn.com.showclear.common.controller;
 
 import cn.com.showclear.common.utils.RequestMessage;
@@ -211,6 +219,7 @@ interface NOTIFY{
 > impl
 
 ```
+
 package cn.com.showclear.plan.impl.common;
 
 import cn.com.showclear.plan.pojo.common.NoticeVO;
@@ -248,11 +257,13 @@ public class NotificationServiceImpl implements BaseServices.NOTIFY {
         }
     }
 }
+
 ```
 
 > NoticeVO 消息体基本对象
 
 ```
+
 package cn.com.showclear.plan.pojo.common;
 
 /**
@@ -278,6 +289,7 @@ public class NoticeVO {
         return subject;
     }
 }
+
 ```
 
 > eg
@@ -307,6 +319,7 @@ public RespMapJson finishPlan(Integer planReId) {
     }
     return resp;
 }
+
 ```
     
 ## 前端推送管理和回调监听
@@ -315,6 +328,7 @@ public RespMapJson finishPlan(Integer planReId) {
 > amd & require
 
 ```
+
 /**
  * require 通用配置
  * @author Yiyuery
@@ -345,11 +359,13 @@ require.config({
         capsule: { deps: ['jquery', 'layer', 'pager'] }
     }
 });
+
 ```
 
 > 推送管理
 
 ```
+
 /**
  * Created by LuLihong on 2017/8/30.
  */
@@ -425,11 +441,13 @@ window.scooper.notice = {
         }
     }
 };
+
 ```
 
 > 推送核心模块
 
 ```
+
 /**
  * 获取后台的通知消息，以websocket方式获取。
  * Created by LuLihong on 2017/8/30.
@@ -516,11 +534,13 @@ define(['jquery', 'scooper-notice', 'stomp', 'sockjs'], function ($) {
         disconnect: MSGWS.disconnect
     }
 });
+
 ```
 
 > 注册回调监听
 
 ```
+
 /*头部引入模块*/
 define(["require", "exports", "jquery", "avalon", "capsule", "layer", 'msg-ws'], function (require, exports, $, avalon, capsule, layer, msgWs)
 
