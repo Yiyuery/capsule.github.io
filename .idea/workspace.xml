@@ -107,8 +107,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2281106">
-              <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+            <state vertical-scroll-proportion="-0.04856787">
+              <caret line="560" column="7" selection-start-line="560" selection-start-column="7" selection-end-line="560" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -144,10 +144,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="23" />
-    <option name="width" value="1936" />
-    <option name="height" value="1065" />
+    <option name="x" value="160" />
+    <option name="y" value="237" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -330,14 +330,20 @@
       <option name="project" value="LOCAL" />
       <updated>1522725710238</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="201804031108">
+      <created>1522725780350</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522725780350</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="23" width="1936" height="1065" extended-state="6" />
+    <frame x="160" y="237" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -377,7 +383,8 @@
     <MESSAGE value="201804031105" />
     <MESSAGE value="201804031106" />
     <MESSAGE value="201804031107" />
-    <option name="LAST_COMMIT_MESSAGE" value="201804031107" />
+    <MESSAGE value="201804031108" />
+    <option name="LAST_COMMIT_MESSAGE" value="201804031108" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -786,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2281106">
-          <caret line="83" column="45" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
+        <state vertical-scroll-proportion="-0.04856787">
+          <caret line="560" column="7" selection-start-line="560" selection-start-column="7" selection-end-line="560" selection-end-column="7" />
           <folding />
         </state>
       </provider>
