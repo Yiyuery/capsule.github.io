@@ -52,6 +52,7 @@ tags:
 
     1、gitalk 评论插件整合
     https://www.jianshu.com/p/9be29ed2f4b7
+    - 注意：分类和文件名要使用英文，否则无法创建issue
     
     2、第三方服务集成教程
     http://theme-next.simpleyyt.com/third-party-services.html#facebook-sdk
