@@ -7,7 +7,7 @@ tags:
 - blog
 ---
 
-本教程致力于利用github实现个人博客的网站搭建
+利用github实现个人博客的网站搭建，便于整理知识，不受第三方博客网站干扰。
 
 ---
 
@@ -20,8 +20,12 @@ tags:
     1、插件
     https://pages.github.com/
     2、搭建教程
-    http://cyzus.github.io/2015/06/21/github-build-blog/
-    
+    http://cyzus.github.io/2015/06/21/github-build-blog/   
+ 
+> 域名解析
+
+     https://www.jianshu.com/p/d1fdf3316fc0
+ 
 > 前端搭建
 
     1、选择主题
@@ -38,7 +42,9 @@ tags:
     3、申请域名
     4、ping xxx.github.io 获取IP
     5、添加CNAME文件（可为空文件）
-    6、阿里云免费域名解析 IP 解析方式设置为CNAME
+    6、阿里云免费域名解析 IP 解析方式设置为CNAME（若网站CNAME文件为空的话）
     7、github中自定义顶级域名
-    
+    8、添加第三方插件
+        - 百度统计
+        - 评论管理
     

@@ -111,8 +111,8 @@
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.0413318">
-                <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+              <first_editor vertical-scroll-proportion="0.9586682">
+                <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -582,7 +582,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522808121901</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="20180404100300">
+      <created>1522808193408</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1522808193408</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1059,8 +1065,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0413318">
-            <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+          <first_editor vertical-scroll-proportion="0.9586682">
+            <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
             <folding />
           </first_editor>
           <second_editor />
