@@ -1,5 +1,5 @@
 ---
-title: 个人博客搭建教程
+title: Github Pages 搭建个人博客教程
 date: 2018-04-04 10:16:00
 categories:
 - Github
