@@ -7,7 +7,7 @@ tags:
 - blog
 ---
 
-利用github实现个人博客的网站搭建，便于整理知识，不受第三方博客网站干扰。
+不想再与主机服务商打交道？GitHub Pages 基于 Jekyll 构建，你可以轻而易举地在 GitHub 上免费发布网站——自定义域名等等。利用github实现个人博客的网站搭建，便于整理知识，不受第三方博客网站限制。
 
 ---
 
@@ -17,7 +17,7 @@ tags:
 
 > github.io web站点
 
-    1、插件
+    1、Github Pages插件
     https://pages.github.com/
     2、搭建教程
     http://cyzus.github.io/2015/06/21/github-build-blog/   
@@ -47,4 +47,12 @@ tags:
     8、添加第三方插件
         - 百度统计
         - 评论管理
+  
+## 相关资料
+
+    1、gitalk 评论插件整合
+    https://www.jianshu.com/p/9be29ed2f4b7
+    
+    2、第三方服务集成教程
+    http://theme-next.simpleyyt.com/third-party-services.html#facebook-sdk
     
