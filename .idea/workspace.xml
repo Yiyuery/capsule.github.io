@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-04-github-blog.md" afterPath="$PROJECT_DIR$/_posts/2018-04-04-github-blog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -104,18 +104,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-04-github-blog.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-04-04-github-blog.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-github-blog.md">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.9586682">
-                <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+              <first_editor vertical-scroll-proportion="0.12399541">
+                <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37442395">
+              <caret line="391" column="14" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,13 +154,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2018-04-03-flowable-modeler.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-03-spring-boot-dubbo.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-spring-boot-activiti.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-04-github-blog.md" />
+        <option value="$PROJECT_DIR$/_config.yml" />
       </list>
     </option>
   </component>
@@ -588,7 +598,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522808193408</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="20180404100301">
+      <created>1522808725193</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1522808725193</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -627,7 +643,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="201804031102" />
     <MESSAGE value="201804031105" />
     <MESSAGE value="201804031106" />
     <MESSAGE value="201804031107" />
@@ -652,7 +667,8 @@
     <MESSAGE value="20180404003201" />
     <MESSAGE value="20180404003202" />
     <MESSAGE value="20180404100300" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180404100300" />
+    <MESSAGE value="20180404100301" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180404100301" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -880,13 +896,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0847456">
-          <caret line="632" column="43" selection-start-line="632" selection-start-column="43" selection-end-line="632" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts_bak/2013-12-24-categories.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1065,11 +1074,19 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.9586682">
-            <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <first_editor vertical-scroll-proportion="0.12399541">
+            <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37442395">
+          <caret line="391" column="14" selection-start-line="391" selection-start-column="14" selection-end-line="391" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
