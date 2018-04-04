@@ -2,7 +2,7 @@
 title: SpringMVC 整合 Mybatis 开发笔记
 date: 2018-04-04 11:16:00
 categories:
-- 数据库
+- DataBase
 tags:
 - mybatis
 ---

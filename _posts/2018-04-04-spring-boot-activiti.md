@@ -2,7 +2,7 @@
 title: Spring Boot 与 Activiti6.0.0 工作流整合开发笔记
 date: 2018-04-04 10:06:00
 categories:
-- 工作流
+- Activiti
 tags:
 - activiti
 ---
