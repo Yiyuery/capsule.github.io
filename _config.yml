@@ -390,7 +390,7 @@ baidu_analytics: 08dce3f31be6967c8b93bf7fff23e584
 # 评论管理
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: Yiyuery
   count: true
   # hide comments (visitors need to click to load the comments)
@@ -419,7 +419,7 @@ changyan:
 
 # Support for gitalk comments system.
 gitalk:
-  enable: false
+  enable: true
   clientID: ab4a3de107711721064a
   clientSecret: 4821925fb9fc2ea60119d7f07a0a11a18866f2eb
   repo: capsule.github.io

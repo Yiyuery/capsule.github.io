@@ -120,21 +120,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3728814">
-              <caret line="411" column="37" selection-start-line="411" selection-start-column="37" selection-end-line="411" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.22125435">
+              <caret line="392" column="15" selection-start-line="392" selection-start-column="15" selection-end-line="392" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gitalk.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gitalk.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_includes/_third-party/comments/gitalk.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20689656">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.25">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -630,7 +630,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522809118177</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="20180404100306">
+      <created>1522810174695</created>
+      <option name="number" value="00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1522810174695</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -669,7 +675,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="201804031108" />
     <MESSAGE value="201804031109" />
     <MESSAGE value="201804031110" />
     <MESSAGE value="201804031111" />
@@ -694,7 +699,8 @@
     <MESSAGE value="20180404100302" />
     <MESSAGE value="20180404100303" />
     <MESSAGE value="20180404100305" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180404100305" />
+    <MESSAGE value="20180404100306" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180404100306" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1101,18 +1107,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_config.yml">
+    <entry file="file://$PROJECT_DIR$/_includes/_third-party/comments/gitalk.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3728814">
-          <caret line="411" column="37" selection-start-line="411" selection-start-column="37" selection-end-line="411" selection-end-column="37" />
+        <state vertical-scroll-proportion="-11.25">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/_third-party/comments/gitalk.html">
+    <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20689656">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.22125435">
+          <caret line="392" column="15" selection-start-line="392" selection-start-column="15" selection-end-line="392" selection-end-column="15" />
           <folding />
         </state>
       </provider>
