@@ -436,6 +436,11 @@ gitalk:
 # 百度分享服务
 baidushare: true
 
+# 打赏
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+alipay: /assets/images/alipay-reward-image.jpg
+
+
 # Share
 #jiathis:
 # Warning: JiaThis does not support https.
