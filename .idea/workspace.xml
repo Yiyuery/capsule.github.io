@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/alipay-reward-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/wechat-reward-image.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/images/alipay-reward-image-big.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -141,8 +139,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35368663">
-              <caret line="441" column="48" selection-start-line="441" selection-start-column="48" selection-end-line="441" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.22926268">
+              <caret line="435" column="8" selection-start-line="435" selection-start-column="8" selection-end-line="435" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -401,12 +399,6 @@
       <created>1522657475072</created>
       <option name="number" value="Default" />
       <updated>1522657475072</updated>
-    </task>
-    <task id="LOCAL-00010" summary="201804031108">
-      <created>1522725780350</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1522725780350</updated>
     </task>
     <task id="LOCAL-00011" summary="201804031109">
       <created>1522726223527</created>
@@ -696,7 +688,13 @@
       <option name="project" value="LOCAL" />
       <updated>1522930937049</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="20180405192904">
+      <created>1522932482526</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1522932482526</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -735,7 +733,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="201804032359" />
     <MESSAGE value="20180404001100" />
     <MESSAGE value="20180404003200" />
     <MESSAGE value="20180404003201" />
@@ -760,7 +757,8 @@
     <MESSAGE value="20180405192901" />
     <MESSAGE value="20180405192902" />
     <MESSAGE value="20180405192903" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180405192903" />
+    <MESSAGE value="20180405192904" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180405192904" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1184,8 +1182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35368663">
-          <caret line="441" column="48" selection-start-line="441" selection-start-column="48" selection-end-line="441" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.22926268">
+          <caret line="435" column="8" selection-start-line="435" selection-start-column="8" selection-end-line="435" selection-end-column="8" />
           <folding />
         </state>
       </provider>
