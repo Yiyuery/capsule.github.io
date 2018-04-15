@@ -27,7 +27,7 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
 > maven 
 
 ```
- <!--springfox-swagger start-->
+        <!--springfox-swagger start-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
@@ -180,7 +180,7 @@ public class UserController {
 
 ```    
     
-    -SwaggerConfiguration
+    - SwaggerConfiguration
     
 ```java
 package com.capsule.common.config;
@@ -333,9 +333,9 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/213852_84e5bcf3_912956.png "201804152139.png") 
      
 
-
-
 > rest-web效果
+
+![输入图片说明](https://gitee.com/uploads/images/2018/0415/214757_d146cb9f_912956.png "201804152148.png")
 
 
 ## 文档生成
