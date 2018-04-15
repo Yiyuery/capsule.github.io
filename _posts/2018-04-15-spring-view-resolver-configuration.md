@@ -27,8 +27,8 @@ tags:
 > 解析当前项目webapp下的/views中所有后缀为.html的资源文件
 
 ```
-        <!-- 默认定义视图解析器 -->
-            <!-- 默认定义视图解析器 -->
+    <!-- 默认定义视图解析器 -->
+    <!-- 默认定义视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="order" value="1"/>
         <property name="prefix" value="/views/"/>
@@ -36,6 +36,7 @@ tags:
     </bean>
 ```
      - 核心方法 
+     
 ```
         //org.springframework.web.servlet.view.InternalResourceViewResolver
 	@Override
@@ -149,6 +150,7 @@ public class ViewController {
 > 视图路由解析
 
     - webapp 目录结构
+    
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/152035_99e820ee_912956.png "201804151521.png")
 
     - 自动选择视图解析器后进行跳转
@@ -160,7 +162,8 @@ public class ViewController {
 
 ### 补充说明
  
-    - 视图解析器调用顺序：
+    - 视图解析器调用顺序
+    
 order越小，优先级越高.
 
     - freemarker 模版路径支持配置多个
