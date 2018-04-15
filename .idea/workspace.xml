@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce4f499-873e-4073-8866-b544a22147fb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-13-tools-idea.md" afterPath="$PROJECT_DIR$/_posts/2018-04-13-tools-idea.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2018-04-15-spring-view-resolver-configuration.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="capsule.github.io.iws" />
@@ -24,22 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2018-04-04-springmvc-swagger-rest.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-springmvc-swagger-rest.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
-            <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.0">
-                <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2018-04-04-spring-boot-websocket.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-04-spring-boot-websocket.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
@@ -135,12 +119,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-13-tools-idea.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-04-13-tools-idea.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-13-tools-idea.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.0413318">
-                <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+              <first_editor vertical-scroll-proportion="0.0">
+                <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-04-15-spring-view-resolver-configuration.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-spring-view-resolver-configuration.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.061997704">
+                <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -168,6 +168,7 @@
         <option value="$PROJECT_DIR$/_posts/2018-04-04-springmvc-mybatis.md" />
         <option value="$PROJECT_DIR$/_config.yml" />
         <option value="$PROJECT_DIR$/_posts/2018-04-13-tools-idea.md" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-15-spring-view-resolver-configuration.md" />
       </list>
     </option>
   </component>
@@ -329,12 +330,6 @@
       <created>1522657475072</created>
       <option name="number" value="Default" />
       <updated>1522657475072</updated>
-    </task>
-    <task id="LOCAL-00014" summary="201804031111">
-      <created>1522726513455</created>
-      <option name="number" value="00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1522726513455</updated>
     </task>
     <task id="LOCAL-00015" summary="201804031112">
       <created>1522726570123</created>
@@ -624,7 +619,13 @@
       <option name="project" value="LOCAL" />
       <updated>1523626514155</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="20180413192907">
+      <created>1523626538819</created>
+      <option name="number" value="00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1523626538819</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -663,7 +664,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="20180404003202" />
     <MESSAGE value="20180404100300" />
     <MESSAGE value="20180404100301" />
     <MESSAGE value="20180404100302" />
@@ -688,20 +688,14 @@
     <MESSAGE value="20180405192905" />
     <MESSAGE value="20180405192906" />
     <MESSAGE value="20180413192906" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180413192906" />
+    <MESSAGE value="20180413192907" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180413192907" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1104,8 +1098,22 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-13-tools-idea.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.0413318">
-            <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <first_editor vertical-scroll-proportion="0.0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="3" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-spring-view-resolver-configuration.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.061997704">
+            <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
             <folding />
           </first_editor>
           <second_editor />
