@@ -52,6 +52,7 @@ tags:
 > 以整合Freemarker为例，多视图解析器自动解析为例
 
      - maven
+     
 ```
  <!--freemarker support [依赖于spring-context-support]实际项目中上文已经引入，此处取消关联依赖-->
         <dependency>
@@ -68,6 +69,7 @@ tags:
 ```
 
     - spring-freemarker.xml
+    
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -126,6 +128,7 @@ tags:
 ### 视图跳转控制和自动解析
 
 > ViewController
+
 ```
 @Controller
 @RequestMapping("/view/")
@@ -162,7 +165,7 @@ order越小，优先级越高.
 
     - freemarker 模版路径支持配置多个
     
- ```$xslt
+ ```
 <property name="templateLoaderPaths">  
     <list>  
         <value>/views/</value>  
