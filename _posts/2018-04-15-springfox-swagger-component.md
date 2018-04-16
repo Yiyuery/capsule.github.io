@@ -125,7 +125,7 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
 > Controller控制器和SwaggerConfiguration配置类的扫描（或bean标签实例）
 
 ```
-<!--spring-beans.xml-->
+    <!--spring-beans.xml-->
     <!--Controller层-->
     <context:component-scan base-package="com.capsule.swagger.controller"/>
     <!--Configuration-->

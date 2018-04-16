@@ -44,8 +44,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-springfox-swagger-component.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="-0.4879449">
-                <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+              <first_editor vertical-scroll-proportion="0.31802526">
+                <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -332,12 +332,6 @@
       <created>1522657475072</created>
       <option name="number" value="Default" />
       <updated>1522657475072</updated>
-    </task>
-    <task id="LOCAL-00022" summary="201804032330">
-      <created>1522769553203</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1522769553203</updated>
     </task>
     <task id="LOCAL-00023" summary="201804032356">
       <created>1522771057700</created>
@@ -627,7 +621,13 @@
       <option name="project" value="LOCAL" />
       <updated>1523891302145</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="20180415192914">
+      <created>1523891433641</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1523891433641</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -666,7 +666,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="20180404100308" />
     <MESSAGE value="20180404100309" />
     <MESSAGE value="20180404100310" />
     <MESSAGE value="20180404100311" />
@@ -691,7 +690,8 @@
     <MESSAGE value="20180415192911" />
     <MESSAGE value="20180415192912" />
     <MESSAGE value="20180415192913" />
-    <option name="LAST_COMMIT_MESSAGE" value="20180415192913" />
+    <MESSAGE value="20180415192914" />
+    <option name="LAST_COMMIT_MESSAGE" value="20180415192914" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1118,8 +1118,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-springfox-swagger-component.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="-0.4879449">
-            <caret line="271" column="0" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+          <first_editor vertical-scroll-proportion="0.31802526">
+            <caret line="127" column="27" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
             <folding />
           </first_editor>
           <second_editor />
