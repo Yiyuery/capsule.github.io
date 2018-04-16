@@ -294,6 +294,7 @@ public class SwaggerConfiguration {
 [Swagger注解](https://huawei-servicecomb.gitbooks.io/developerguide/content/build-provider/swagger-annotation.html) 
 
 ```java
+
 /*入参*/
 @ApiModel(description = "用户请求表单")
 public class UserForm {
@@ -337,7 +338,9 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
     - swagger的注解主要是为了界面和json中对完成对接口的描述
     - swagger的注解在controller层加会污染代码，如何优化？
         > Controller继承接口API,在API中利用 swagger标签进行描述
+        
 ```java
+
 @Api(value = "User控制器")
 public interface UserActionAPI {
 
