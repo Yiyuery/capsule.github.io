@@ -19,6 +19,7 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
     - Swagger是世界上最大的框架API开发工具的API规范（OAS），从设计、文档、测试和部署上努力使整个API开发生命周期大大缩短。
     - 随着互联网技术的发展，现在的网站架构基本都由原来的后端渲染，变成了：前端渲染、前后端分离的形态。
     - 微服务REST-API的方式链接前端和后台。
+具体的可以看这里[API 的撰写 - 契约](https://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&mid=402114651&idx=1&sn=a7b891f532e29b73afd83f17ae071023&scene=1&srcid=0331zejNfNvZ5ccJEdBpJxIr&from=singlemessage&isappinstalled=0#wechat_redirect)
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/204725_ad0549ad_912956.png "20170827202033991.png")
     
@@ -219,7 +220,8 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("USER")
                 .apiInfo(apiInfo())
-                .select()
+                .select()                
+                //.apis(RequestHandlerSelectors.basePackage("com.capsule.web2.controller")) 指定controller扫描位置
                 .paths(userPathsRex())
                 .build().pathMapping("/rest2");
     }
@@ -270,14 +272,27 @@ public class SwaggerConfiguration {
 
 > 注解说明
 
-    @ApiModel 表明这是一个被swagger框架管理的model，用于class上
+    @ApiModel 表明这是一个被swagger框架管理的model，用于实体类上
 
-    @ApiModelProperty 这里顾名思义，就是标注在被标注了
+    @ApiModelProperty model对象中成员变量名称标注，常用属性value,name
 
     @ApiModel的class的属性上，这里的value是对字段的描述，example是取值例子，注意这里的example很有用，对于前后端开发工程师理解文档起到了关键的作用，因为会在api文档页面上显示出这些取值来；这个注解还有一些字段取值，可以自己研究，举例说一个：position，表明字段在model中的顺序
 
-    @ApiOperation标注在具体请求上，value和notes的作用差不多，都是对请求进行说明；tags则是对请求进行分类的，比如你有好几个controller，分别属于不同的功能模块，那这里我们就可以使用tags来区分了，看上去很有条理
+    @ApiOperation标注在具体请求方法上，value和notes的作用差不多，都是对请求进行说明；tags则是对请求进行分类的，比如你有好几个controller，分别属于不同的功能模块，那这里我们就可以使用tags来区分了，看上去很有条理
     
+    @Api()用于类名标注，常用属性value,description,tag 
+    
+    @ApiImplicitParams 接口、请求方法上方对入参的描述，通常用({@ApiImplicitParam(...),...})包裹多个参数
+    
+    @ApiImplicitParam 接口、请求方法上方基本参数描述
+    
+    @ApiParam(value="...",name="...",type="int") 方法中调用的参数描述，紧邻参数，默认body application/json，可以通过加@RequestParam("...")Integer ... 来指定参数类型
+     
+ 
+    
+
+[Swagger注解](https://huawei-servicecomb.gitbooks.io/developerguide/content/build-provider/swagger-annotation.html) 
+
 ```java
 /*入参*/
 @ApiModel(description = "用户请求表单")
@@ -318,17 +333,51 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
 
 官方 springfox-petstore 中也有大量的范例，idea中载入源码即可了解所有标签的使用
 
+
+    - swagger的注解主要是为了界面和json中对完成对接口的描述
+    - swagger的注解在controller层加会污染代码，如何优化？
+        > Controller继承接口API,在API中利用 swagger标签进行描述
+```java
+@Api(value = "User控制器")
+public interface UserActionAPI {
+
+    @ApiOperation(value = "根据用户id查询用户信息", httpMethod = "GET",produces = "application/json",consumes = "application/json")
+    @ApiResponse(code = 200, message = "success", response = RespMapJson.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(value="用户Id",defaultValue="1",name="userId",required=true,paramType="query",dataType="int")})
+    RespMapJson test(@ApiParam(name = "userId", required = true, value = "用户Id") @RequestParam("userId") int userId);
+}
+
+@RestController
+@RequestMapping("/user/")
+public class UserController implements UserActionAPI {
+
+
+    @RequestMapping(path = "hi", method = RequestMethod.GET)
+    public RespMapJson test(int userId) {
+        return new RespMapJson().setData(new UserDo().setName("Yiyuery").setAge(25).setId(userId)).setMsg("用户信息获取成功！");
+    }
+
+    @RequestMapping(path = "getUserName", method = RequestMethod.GET)
+    public String getUserName() {
+        return "Yiyuery";
+    }
+
+}
+
+```   
+
 > 接口json
     
     - 默认路径
 
      localhost[/ip]:port+${ctx}+web.xml[中配置的DispatchServlet拦截路径]（'/'）+/v2/api-docs+[group='your api group def']
     
-    - 自定义API接口组  **http://localhost:8080/springfox-swagger/v2/api-docs?group=API** 
+    - 自定义API接口组  http://localhost:8080/springfox-swagger/v2/api-docs?group=API 
     
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/213820_95a8068a_912956.png "201804152138.png")
     
-    - 默认接口组  **http://localhost:8080/springfox-swagger/v2/api-docs** 
+    - 默认接口组  http://localhost:8080/springfox-swagger/v2/api-docs
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/213852_84e5bcf3_912956.png "201804152139.png") 
      
@@ -340,6 +389,10 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
 
 ## 文档生成
 
+    1、web.xml需要添加swagger的servlet然后做url mapping，不然swagger-ui.html和/v2/api-docs显示不出来。
+    2、swagger的配置文件要加一个swagger config的bean。
+    3、swagger config类是做定制化显示用的。例如版本号，作者信息等等。通过实现多个Docket可以输出多条api路径信息和接口文档。
+    4、使用springfox-staticdocs可实现输出静态api文档。但是有个坑，默认编码并非utf-8，中文会乱码。只好自己实现一个Swagger2MarkupResultHandler，在里面指定编码格式。已提pr，不知他们接不接受。
 
 
 ## 前端对接
@@ -356,3 +409,10 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
 
 [springfox-swagger整合教程](http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api)
 
+[SpringMVC集成springfox-swagger2自动生成接口文档](https://www.cnblogs.com/zhaojiankai/p/8318359.html)
+
+
+
+```
+    https://blog.csdn.net/qq_16256793/article/details/79522749
+```
