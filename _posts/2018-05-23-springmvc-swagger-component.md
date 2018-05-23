@@ -1,5 +1,5 @@
 ---
-title: Spring MVC 组件配置 之 Swagger整合（自定义样式调整）（springmvc-swagger）
+title: Spring MVC 组件配置 之  整合Swagger UI 开发后台接口动态管理（自定义样式调整）（springmvc-swagger）
 date: 2018-05-23 21:22:00
 categories:
 - Spring Components
