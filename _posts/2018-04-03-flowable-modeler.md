@@ -1,5 +1,5 @@
 ---
-title: Flowable 与 modeler 流程设计器整合
+title: Flowable 与 modeler 流程设计器整合123
 date: 2018-04-03 23:22:00
 categories:
 - Activiti
@@ -113,10 +113,10 @@ public class FlowableModelerRestController {
 	> 源码导入（方便复写）
 
 ![这里写图片描述](http://img.blog.csdn.net/20180312111028250?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
- 
- 
+
+
 	> web.xml 添加路由映射
-	
+
 ```
 /*在web.xml中添加路由映射*/
 <!-- 配置Spring核心控制器 -->
@@ -156,11 +156,11 @@ public class FlowableModelerRestController {
 ```
 
 	> 添加配置：扫描注入
-	
+
 ![这里写图片描述](http://img.blog.csdn.net/20180312111527309?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 	> 汉化：主要是修改stencilset_bpmn.json文件（百度一下可以找到很多）
-	
+
 ![这里写图片描述](http://img.blog.csdn.net/20180312111737357?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ## 效果
@@ -172,7 +172,7 @@ public class FlowableModelerRestController {
 ![这里写图片描述](http://img.blog.csdn.net/20180312111907496?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 ## 备注
-	
+
 	1、数据库操作请使用c3p0，因为flowable-modeler中使用的是这个，避免冲突。
 	2、由于静态资源在项目中，所以样式的修改完全可以自定义。
 
@@ -210,7 +210,7 @@ public class FlowableModelerRestController {
     http://veevv.com/2017/03/17/flowable-modeler-integrate/
     14、国际化
     https://www.cnblogs.com/liukemng/p/3750117.html
-    
+
 
  通用
 
