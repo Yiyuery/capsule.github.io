@@ -1,3 +1,17 @@
+---
+title: JDK8 Lambda & Stream使用笔记
+date: 2018-06-20 16:22:00
+categories:
+- jdk
+tags:
+- jdk1.8
+- lamda
+---
+
+最近使用的Java8,就Lamba和Stream的使用整理了笔记，所以仅供参考和学习。    
+
+---
+
 # JDK8 Lambda & Stream使用笔记
 
 ## 简介
