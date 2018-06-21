@@ -2,7 +2,7 @@
 title: JDK8 Lambda & Stream使用笔记
 date: 2018-06-20 16:22:00
 categories:
-- jdk
+- JDK
 tags:
 - jdk1.8
 - lamda
@@ -15,7 +15,7 @@ tags:
 # JDK8 Lambda & Stream使用笔记
 
 ## 简介
-	
+
 > Lambda
 
 	一段带有输入参数的可执行语句块。
@@ -59,7 +59,7 @@ List<String> lowercaseNames = names.stream().map((String name) -> {return name.t
 //编译器都可以从上下文环境中推断出lambda表达式的参数类型
 List<String> lowercaseNames = names.stream().map((name) -> {return name.toLowerCase();}).collect(Collectors.toList());
 
-```	
+```
 
 	2. 当lambda表达式的参数个数只有一个，可以省略小括号
 
@@ -114,14 +114,14 @@ for(int i = 1; i<4; i++){
 ```
 
 > Lambda表达式眼中的this
-	
+
 	不是指向lambda表达式产生的那个SAM对象，而是声明它的外部对象。[外部类作用域]
 
 
 
 > 简化Lambda表达式中方法和构造器引用
-	
-	1. 方法引用	
+
+	1. 方法引用
 
 ```
 //等同于把lambda表达式的参数直接当成instanceMethod|staticMethod的参数来调用
@@ -136,7 +136,7 @@ ClassName::instanceMethod
 	String::toLowerCase等同于x->x.toLowerCase()
 
 
-	2. 构造器引用	
+	2. 构造器引用
 
 	ClassName::new，把lambda表达式的参数当成ClassName构造器的参数 。例如BigDecimal::new等同于x->new BigDecimal(x)。
 
@@ -174,11 +174,11 @@ Stream.generate(new Supplier<Double>() {
 		@Override
 		public Double get() {
 		return Math.random();
-	}	
+	}
 });
 Stream.generate(() -> Math.random());
 Stream.generate(Math::random);
-   
+
 ```
 	三条语句的作用都是一样的，只是使用了lambda表达式和方法引用的语法来简化代码。每条语句其实都是生成一个无限长度的Stream，其中值是随机的。这个无限长度Stream是懒加载，一般这种无限长度的Stream都会配合Stream的limit()方法来用。
 
@@ -297,7 +297,7 @@ sum is:36
                   BiConsumer<R, R> combiner);
 ```
 `参数说明`
-	
+
 	- Supplier supplier是一个工厂函数，用来生成一个新的容器
 	- BiConsumer accumulator也是一个函数，用来把Stream中的元素添加到结果容器中
 	- BiConsumer combiner还是一个函数，用来把中间状态的多个结果容器合并成为一个（并发的时候会用到）
@@ -369,11 +369,11 @@ T reduce(T identity, BinaryOperator<T> accumulator);
 List<Integer> ints = Lists.newArrayList(1,2,3,4,5,6,7,8,9,10);
 System.out.println("ints sum is:" + ints.stream().reduce(0, (sum, item) -> sum + item));
 ```
-	
+
 	这个定义与上面已经介绍过的基本一致，不同的是：它允许用户提供一个循环计算的初始值，如果Stream为空，就直接返回该值。而且这个方法不会返回Optional
 
 * count方法
-	
+
 	获取Stream中元素的个数
 
 ```java
@@ -398,5 +398,3 @@ ints.stream().max((o1, o2) > o1.compareTo(o2)).ifPresent(System.out::println);
 
 1. [Java8初体验（一）lambda表达式语法](http://ifeve.com/lambda/)
 2. [Java8初体验（二）Stream语法详解](http://ifeve.com/stream/)
-
-

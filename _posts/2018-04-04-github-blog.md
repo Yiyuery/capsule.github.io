@@ -21,11 +21,11 @@ tags:
     https://pages.github.com/
     2、搭建教程
     http://cyzus.github.io/2015/06/21/github-build-blog/   
- 
+
 > 域名解析
 
      https://www.jianshu.com/p/d1fdf3316fc0
- 
+
 > 前端搭建
 
     1、选择主题
@@ -34,7 +34,7 @@ tags:
     http://jekyllthemes.org/themes/jekyll-theme-next/
     3、github window 客户端
     https://desktop.github.com/
-    
+
 > 整体思路
 
     1、github创建xxx.gihub.io项目
@@ -47,13 +47,12 @@ tags:
     8、添加第三方插件
         - 百度统计
         - 评论管理
-  
+
 ## 相关资料
 
     1、gitalk 评论插件整合
     https://www.jianshu.com/p/9be29ed2f4b7
     - 注意：分类和文件名要使用英文，否则无法创建issue
-    
+
     2、第三方服务集成教程
     http://theme-next.simpleyyt.com/third-party-services.html#facebook-sdk
-    
