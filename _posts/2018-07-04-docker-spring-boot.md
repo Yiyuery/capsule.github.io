@@ -80,4 +80,5 @@ Docker搭建微服务自动部署 <架构探险之路>，让我们来看看如�
 
 ## 整合gitlab、jenkins实现自动化发布
 
-  请前往 2018-07-05-docker-jenkins.md、2018-07-07-docker-gitlab.md
+[Docker 之 GitLab 局域网代码托管](http://xiazhaoyang.tech/docker/2018/07/07/docker-gitlab/)
+[Docker 之 Jenkins自动化部署](http://xiazhaoyang.tech/docker/2018/07/05/docker-jenkins/)
