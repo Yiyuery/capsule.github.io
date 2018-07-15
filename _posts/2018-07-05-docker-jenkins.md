@@ -128,7 +128,7 @@ Docker搭建微服务自动部署 <架构探险之路>，让我们来看看如�
 # 定义变量
 API_NAME="msa-api-hello"
 API_VERSION="0.0.1"
-API_POST="8101"
+API_PORT="8101"
 IMAGE_NAME="127.0.0.1:5000/com.msa/$API_NAME:$BUILD_NUMBER"
 CONTAINER_NAME=$API_NAME-$API_VERSION
 
@@ -143,9 +143,10 @@ docker build -t $IMAGE_NAME .
 docker push $IMAGE_NAME
 
 # 删除Docker容器
-cid=$(docker ps | grep "$CONTAINER_NAME" |awk '{print $1}')
-if [ "$cid" != ""]; then
-	docker rm -f $cid
+cid=$(docker ps | grep $CONTAINER_NAME |awk '{print $1}')
+if [ x"$cid" != x ]
+	then
+   	docker rm -f $cid
 fi
 
 # 启动Docker容器
@@ -176,6 +177,8 @@ rm -f Dockerfile
 
 ---
 
+## 自动构建并发布
+
   考虑到本地笔记本开发环境，多个dokcer的运行效率本来就低，因此，为提高构建速度，下载war包后在本地tomcat中运行，需要对jenkins进行构建的话，启动tomcat即可。
 
 > tomcat 部署项目
@@ -199,6 +202,23 @@ rm -f Dockerfile
 
 tag使用的是构建次数作为版本标记
 
+> 自动发布
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143538_c8498d9b_912956.png "屏幕截图.png")
+
+  - 仓库
+
+  ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143731_7b31750e_912956.png "屏幕截图.png")
+
+  - 运行
+
+  ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143844_c6d296e2_912956.png "屏幕截图.png")
+
+`备注：`
+
+  - 初次构建速度比较慢，后面由于镜像缓存、maven依赖的下载完成，构件速度会变快很多。
+  - shell脚本遇到问题请自行学习相关知识
+  - 轻量级微服务的自动化发布平台，主要实现思路：Jenkins从GitLab中获取源码，构建后生成docker镜像，以Docker容器的方式进行发布，此外，我还将生成的Docker镜像推送到本地的Docker Registry，以供生产环境使用。如此，我们交付的不再是源码，而是Docker镜像，这种方式更加简单高效。
 
 ## REFRENCES
 
