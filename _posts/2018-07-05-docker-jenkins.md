@@ -8,10 +8,9 @@ tags:
 - jenkins
 ---
 
-Docker搭建微服务自动部署<架构探险之路>，让我们来看看如何实现基于Docker的Jenkins自动化部署。
+Docker搭建微服务自动部署 <架构探险之路>，让我们来看看如何实现基于Docker的Jenkins自动化部署。
 
 ---
-
 
 # Docker 之 Jenkins自动化部署
 
@@ -23,7 +22,9 @@ Docker搭建微服务自动部署<架构探险之路>，让我们来看看如何
   - Spring Boot 开发代码后编写Dokcerfile文件
   - Spring Boot 利用docker的mvn插件测试镜像的生成和推送
   - 测试镜像运行
+
   ---
+
   镜像的自动构建分两种情况：
   > jenkins所在容器中已部署docker服务
 
@@ -34,6 +35,8 @@ Docker搭建微服务自动部署<架构探险之路>，让我们来看看如何
     - jenkins中利用Docker插件实现镜像构建
     - jenkins 全局工具配置中安装docker[自动安装]
     - 将jenkins部署在宿主机上，重复上述关联步骤。gitlab可切换为github、gitee
+
+> 为了提升镜像的自动构建速度，最终采用本地部署jenkins的方式，因为宿主机是有docker运行环境的。
 
 ## Jenkins部署
 
@@ -171,11 +174,31 @@ rm -f Dockerfile
     - Docker-outside-of-Docker [DooD]
     - 使用Jenkins的Docker插件
 
-  > jenkins 中 使用 Docker插件完成镜像构建
+---
 
-  安装Docker环境
+  考虑到本地笔记本开发环境，多个dokcer的运行效率本来就低，因此，为提高构建速度，下载war包后在本地tomcat中运行，需要对jenkins进行构建的话，启动tomcat即可。
 
-![输入图片说明](https://images.gitee.com/uploads/images/2018/0709/082910_de1df423_912956.png "屏幕截图.png")
+> tomcat 部署项目
+
+  直接放在tomcat的webapp目录下后在bin目录下直接启动也是可以的。此处主要是因为idea中开发演示项目，直接放在一起，方便管理。
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/104116_f53df3ef_912956.png "屏幕截图.png")
+
+> 安装maven插件
+
+  不安装插件则无法构建maven项目，jenkins默认是不支持maven的
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/103852_108efbc2_912956.png "屏幕截图.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/104030_32d92011_912956.png "屏幕截图.png")
+
+> 配置后拉取项目代码进行构建
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/103547_345e476e_912956.png "屏幕截图.png")
+
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/103629_bd4e19d8_912956.png "屏幕截图.png")
+
+tag使用的是构建次数作为版本标记
+
 
 ## REFRENCES
 
