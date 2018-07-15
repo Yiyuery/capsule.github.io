@@ -7,7 +7,7 @@ tags:
 - docker
 ---
 
-Docker搭建微服务自动部署 <架构探险之路>，让我们先来了解下CentOS 环境安装、以及Docker的一些常用操作。
+<架构探险之路> Docker搭建微服务自动部署平台，让我们先来了解下CentOS 环境安装、以及Docker的一些常用操作。
 
 ---
 

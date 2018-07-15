@@ -8,7 +8,7 @@ tags:
 - nginx
 ---
 
-Docker搭建微服务自动部署 <架构探险之路>，让我们来了解下Docker中如何安装、使用nginx吧！
+<架构探险之路> Docker搭建微服务自动部署平台，让我们来了解下Docker中如何安装、使用nginx吧！
 
 ---
 

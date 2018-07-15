@@ -8,7 +8,7 @@ tags:
 - jenkins
 ---
 
-Docker搭建微服务自动部署 <架构探险之路>，让我们来看看如何实现基于Docker的Jenkins自动化部署。
+<架构探险之路> Docker搭建微服务自动部署平台，让我们来看看如何实现基于Docker的Jenkins自动化部署。
 
 ---
 
@@ -227,3 +227,4 @@ tag使用的是构建次数作为版本标记
 3.  [Jenkins 利用maven、git管理项目](https://jingyan.baidu.com/album/597a06433ff422312a52436f.html?picindex=1)
 4. [Jenkins与Docker相关的Plugin使用](https://blog.csdn.net/ztsinghua/article/details/52128140)
 5. [宿主机安装jenkins方案](https://www.jianshu.com/p/a7d7df97fe4b)
+6. [Shell菜鸟教程](http://www.runoob.com/linux/linux-shell-test.html)

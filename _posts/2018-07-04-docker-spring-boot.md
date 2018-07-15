@@ -8,7 +8,7 @@ tags:
 - jenkins
 ---
 
-Docker搭建微服务自动部署 <架构探险之路>，让我们来看看如何利用spring boot 的maven插件实现代码的自动化构建和发布吧！
+<架构探险之路> Docker搭建微服务自动部署平台，让我们来看看如何利用spring boot 的maven插件实现代码的自动化构建和发布吧！
 
 ---
 
