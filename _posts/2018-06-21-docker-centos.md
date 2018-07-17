@@ -486,3 +486,14 @@ Docker for Mac中在图形化终端上修改如下，填写后“Apply&Restart�
 1.  [Dockerfile构建镜像](https://blog.csdn.net/qinyushuang/article/details/43342553)
 2.  [Docker私有仓库搭建](https://www.jianshu.com/p/9cf9d1c8b00c)
 3.  [Dcoker数据卷挂载](https://yeasy.gitbooks.io/docker_practice/content/data_management/volume.html)
+
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！
+
+```
