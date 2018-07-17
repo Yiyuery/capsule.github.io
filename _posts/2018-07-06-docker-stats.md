@@ -71,3 +71,12 @@ tags:
     cfa1a6786510        nginx                  0.03%               6.793MiB / 1GiB     0.66%               928B / 0B           385kB / 24.6kB      4
     84ad7ef849b3        local-docker-res-web   0.49%               521.4MiB / 1GiB     50.92%              928B / 0B           74.5MB / 4.1kB      24
     190e85388e0d        local-docker-res       0.00%               3.625MiB / 1GiB     0.35%               1.11kB / 0B         1.29MB / 0B         7
+
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

@@ -77,7 +77,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
 > 消息体
 
     1、RequestMessage
-    
+
 ```
 
 package cn.com.showclear.common.utils;
@@ -99,7 +99,7 @@ public class RequestMessage {
 ```
 
     2、ResponseMessage
-    
+
 ```
 
 package cn.com.showclear.common.utils;
@@ -158,13 +158,13 @@ public class WsController {
 ```
 
 ## 前端脚本
-    
+
     1、STOMP协议的客户端脚本stomp.js、
     2、SockJS的客户端脚本sock.js
     3、jQuery
 
 > 建立连接和主题推送
- 
+
 ```     
 
 /*连接、订阅主题回调*/
@@ -186,13 +186,13 @@ public class WsController {
         console.log('name:' + name);
         stompClient.send("/hello", {}, JSON.stringify({'name': name}));
     }
-    
+
 ```
 
 ## 推送框架设计
 
 > 不使用@SendTo注解，通过SimpMessagingTemplate完成消息推送服务层的搭建，
-   
+
     1、@SendTo 适合放在WebsocketListener[@Controller]中监听指定指定消息代理并完成任务转发
     2、notifyService 适合在不同控制层[@Controller]中直接完成推送服务
 
@@ -293,7 +293,7 @@ public class NoticeVO {
 ```
 
 > eg
-    
+
 ```
 
 ......
@@ -321,7 +321,7 @@ public RespMapJson finishPlan(Integer planReId) {
 }
 
 ```
-    
+
 ## 前端推送管理和回调监听
 
 
@@ -336,7 +336,7 @@ public RespMapJson finishPlan(Integer planReId) {
 require.config({
     baseUrl: window.main.contextPath,
     paths: {
-      
+
         jquery: "js/lib/jquery/jquery-1.9.1",
 
         //websocket
@@ -346,10 +346,10 @@ require.config({
         //ws-utils
         'scooper-notice': 'js/scooper/scooper.notice',
         'msg-ws':'js/websocket/msg-websocket',
-        
+
         //提示组件
         layer: 'js/lib/layer/layer',
-        
+
         //自定义组件
         capsule: 'js/lib/capsule/capsule.util',
     },
@@ -551,7 +551,7 @@ define(["require", "exports", "jquery", "avalon", "capsule", "layer", 'msg-ws'],
 function regWebSocketListener() {
     window.scooper.notice.addListener('/msg/refresh', wsNotify);
 },
-    
+
 /**
  * websocket消息通知
  * @param msg
@@ -566,7 +566,13 @@ function wsNotify(isRefresh) {
 }
 
 ```
-    
 
 
 
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

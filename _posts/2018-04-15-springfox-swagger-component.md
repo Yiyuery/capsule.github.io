@@ -22,10 +22,10 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
 具体的可以看这里[API 的撰写 - 契约](https://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&mid=402114651&idx=1&sn=a7b891f532e29b73afd83f17ae071023&scene=1&srcid=0331zejNfNvZ5ccJEdBpJxIr&from=singlemessage&isappinstalled=0#wechat_redirect)
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/204725_ad0549ad_912956.png "20170827202033991.png")
-    
+
 ## 整合方式
 
-> maven 
+> maven
 
 ```
         <!--springfox-swagger start-->
@@ -73,14 +73,14 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
 > 静态资源配置（2种方式）
 
     - spring-mvc.xml 中添加如下配置
-    
+
 ```
     <!-- don't handle the static resource -->
     <mvc:default-servlet-handler/>
 ```
-    
+
     - spring-swagger.xml 中添加如下配置
-    
+
 ```
     <!--jar中静态资源配置访问权限-->
     <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
@@ -97,7 +97,7 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
             classpath:config/spring/spring-*.xml
         </param-value>
     </context-param>
-    
+
     <servlet>
         <servlet-name>springmvc</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -113,13 +113,13 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-        
-        
-    
+
+
+
 ```
 
 > Controller控制器和SwaggerConfiguration配置类的扫描（或bean标签实例）
@@ -180,9 +180,9 @@ public class UserController {
 }
 
 ```    
-    
+
     - SwaggerConfiguration
-    
+
 ```java
 package com.capsule.common.config;
 
@@ -268,7 +268,7 @@ public class SwaggerConfiguration {
 }
 
 
-``` 
+```
 
 > 注解说明
 
@@ -279,17 +279,17 @@ public class SwaggerConfiguration {
     @ApiModel的class的属性上，这里的value是对字段的描述，example是取值例子，注意这里的example很有用，对于前后端开发工程师理解文档起到了关键的作用，因为会在api文档页面上显示出这些取值来；这个注解还有一些字段取值，可以自己研究，举例说一个：position，表明字段在model中的顺序
 
     @ApiOperation标注在具体请求方法上，value和notes的作用差不多，都是对请求进行说明；tags则是对请求进行分类的，比如你有好几个controller，分别属于不同的功能模块，那这里我们就可以使用tags来区分了，看上去很有条理
-    
-    @Api()用于类名标注，常用属性value,description,tag 
-    
+
+    @Api()用于类名标注，常用属性value,description,tag
+
     @ApiImplicitParams 接口、请求方法上方对入参的描述，通常用({@ApiImplicitParam(...),...})包裹多个参数
-    
+
     @ApiImplicitParam 接口、请求方法上方基本参数描述
-    
+
     @ApiParam(value="...",name="...",type="int") 方法中调用的参数描述，紧邻参数，默认body application/json，可以通过加@RequestParam("...")Integer ... 来指定参数类型
-     
- 
-    
+
+
+
 
 [Swagger注解](https://huawei-servicecomb.gitbooks.io/developerguide/content/build-provider/swagger-annotation.html) 
 
@@ -338,7 +338,7 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
     - swagger的注解主要是为了界面和json中对完成对接口的描述
     - swagger的注解在controller层加会污染代码，如何优化？
         > Controller继承接口API,在API中利用 swagger标签进行描述
-        
+
 ```java
 
 @Api(value = "User控制器")
@@ -371,19 +371,19 @@ public class UserController implements UserActionAPI {
 ```   
 
 > 接口json
-    
+
     - 默认路径
 
      localhost[/ip]:port+${ctx}+web.xml[中配置的DispatchServlet拦截路径]（'/'）+/v2/api-docs+[group='your api group def']
-    
-    - 自定义API接口组  http://localhost:8080/springfox-swagger/v2/api-docs?group=API 
-    
+
+    - 自定义API接口组  http://localhost:8080/springfox-swagger/v2/api-docs?group=API
+
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/213820_95a8068a_912956.png "201804152138.png")
-    
+
     - 默认接口组  http://localhost:8080/springfox-swagger/v2/api-docs
 
-![输入图片说明](https://gitee.com/uploads/images/2018/0415/213852_84e5bcf3_912956.png "201804152139.png") 
-     
+![输入图片说明](https://gitee.com/uploads/images/2018/0415/213852_84e5bcf3_912956.png "201804152139.png")
+
 
 > rest-web效果
 
@@ -419,3 +419,12 @@ public class UserController implements UserActionAPI {
 ```
     https://blog.csdn.net/qq_16256793/article/details/79522749
 ```
+
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

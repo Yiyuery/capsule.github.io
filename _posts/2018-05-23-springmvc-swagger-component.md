@@ -16,10 +16,10 @@ tags:
 
     - swagger静态资源和SpringMVC项目整合
     - 支持自定义样式开发
-    - 基于swagger2.2.10版本开发 
+    - 基于swagger2.2.10版本开发
 
 ## 开发环境
-    
+
     - tomcat 7.0.78
     - jdk 1.7+
     - spring 4.3.13.RELEASE
@@ -95,7 +95,7 @@ public class SwaggerConfig {
 <!-- 将自定义的swagger配置类加载到spring容器 -->
 <bean class="cn.com.showclear.config.SwaggerConfig" />
 <!-- don't handle the static resource -->
-<mvc:default-servlet-handler></mvc:default-servlet-handler> 
+<mvc:default-servlet-handler></mvc:default-servlet-handler>
 ```
 
 ## spring-servlet.xml
@@ -182,22 +182,22 @@ public class SwaggerConfig {
     https://www.2cto.com/kf/201604/499072.html
     http://blog.csdn.net/hayre/article/details/51027201
     http://www.mamicode.com/info-detail-525592.html
-    
+
     2、Can't read swagger JSON from http...
     http://blog.csdn.net/shecanwin/article/details/55667102
     http://blog.csdn.net/xyw591238/article/details/51939111
-    
+
     3、No qualifying bean of type 'com.mangofactory.swagger.configuration.SpringSwaggerConfig' available: ...
     https://www.cnblogs.com/driftsky/p/4952918.html
-    
+
     4、swagger文件上传的写法
     http://blog.csdn.net/qq_23167527/article/details/78559096
-    
+
 ## swagger静态资源文件下载
 
     1、版本下载列表
     https://github.com/Yiyuery/swagger-ui
-    
+
     2、2.2.10下载链接
     https://github.com/swagger-api/swagger-ui/tree/v2.2.10
 
@@ -211,3 +211,10 @@ public class SwaggerConfig {
 
 
 
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

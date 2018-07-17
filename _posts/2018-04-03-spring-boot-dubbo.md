@@ -364,7 +364,7 @@ Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分�
 ## 项目核心代码
 
     > 接口定义层 spring-boot-api
-    
+
 ```
 package cn.com.capsule.api.services;
 
@@ -402,7 +402,7 @@ public class HiServiceImpl implements HiService {
 ```
 
     > 服务消费（调用）层 sprong-boot-consumer
-    
+
 ```
 package cn.com.capsule.consumer.controller;
 
@@ -434,9 +434,9 @@ public class HiController {
 
 ```
 ## zookeeper下载和安装
-    
+
     http://mirror.bit.edu.cn/apache/zookeeper/
-    
+
 > 基于3.3.6版本
 
     1、下载解压
@@ -444,21 +444,21 @@ public class HiController {
     3、bin同级目录下新增log文件夹（提供日志生成路径）
     4、修改名称为zoo.cfg并调整配置
     5、添加配置
-    
+
 ```
 # The number of milliseconds of each tick
 tickTime=2000
-# The number of ticks that the initial 
+# The number of ticks that the initial
 # synchronization phase can take
 initLimit=10
-# The number of ticks that can pass between 
+# The number of ticks that can pass between
 # sending a request and getting an acknowledgement
 syncLimit=5
 # the directory where the snapshot is stored.
 # dataDir=/tmp/zookeeper
 # the port at which the clients will connect
 
-# 这个时间是作为 Zookeeper 服务器之间或客户端与服务器之间维持心跳的时间间隔，也就是每个 tickTime 时间就会发送一个心跳。 
+# 这个时间是作为 Zookeeper 服务器之间或客户端与服务器之间维持心跳的时间间隔，也就是每个 tickTime 时间就会发送一个心跳。
 #
 syncLimit=5
 # 数据存放目录
@@ -467,11 +467,11 @@ dataDir=F:\\capsule\\tools\\zookeeper-3.3.6\\data
 dataLogDir=F:\\capsule\\tools\\zookeeper-3.3.6\\log
 # 注册中心端口号
 clientPort=2181
-    
+
 ```
     6、cmd中使用命令执行zkServer.cmd
-    
-    
+
+
 
 ## 项目部署和启动
 
@@ -486,11 +486,11 @@ spring-boot可以直接通过appication的启动类来启动项目，但是由�
     3、启动consumer
 
 > web端调用
-    
+
     根据所配置的consumer的server.port来确定访问路径：
-    
+
     localhost:8080/
-    
+
 ![image](http://img.blog.csdn.net/20180225164506439?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 
@@ -561,3 +561,11 @@ http://blog.csdn.net/u011659172/article/details/51491518
 
 [点击](https://gitee.com/xiacy/spring-boot-samples/tree/master/spring-boot-dubbo)：获取项目源码
 
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

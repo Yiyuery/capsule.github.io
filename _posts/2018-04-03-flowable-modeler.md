@@ -221,3 +221,11 @@ public class FlowableModelerRestController {
     https://tkjohn.github.io/flowable-userguide/
 
 ```
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

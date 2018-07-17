@@ -74,7 +74,7 @@ public class DataSourceConfig extends AbstractProcessEngineAutoConfiguration {
     @ConfigurationProperties(prefix="db.other")
     public DataSource dataSourceaOther() {
         return new DriverManagerDataSource();
-    } 
+    }
 
     @Primary
     @Bean(name = "dataSource")
@@ -92,7 +92,7 @@ public class DataSourceConfig extends AbstractProcessEngineAutoConfiguration {
     public DataSource dataSourceActiviti() {
         return DataSourceBuilder.create().build();
     }
-    
+
     @Bean
     public SpringProcessEngineConfiguration springProcessEngineConfiguration(
             PlatformTransactionManager transactionManager,
@@ -121,15 +121,15 @@ spring.datasource.activiti.driver-class-name=com.mysql.jdbc.Driver
 ---
 
 > SpringBoot 整合 Activiti 开发实战
-	
+
 ## Activiti 简介
-    
+
     1、类似于OA的一种流式工作任务管理框架。
     2、依赖于Activiti BPM引擎和BPMN 2.0
 
 
 ## 流程设计器的搭建
-        
+
 > 官网 https://www.activiti.org/
 
 ### 下载官方流程设计器
@@ -143,7 +143,7 @@ https://www.activiti.org/download-links
 ###  将解压后的wars放在Tomcat下
 
 并修改配置文件为mysql的[连接方式](http://note.youdao.com/noteshare?id=25c687dea4a92ec0b5b48302e625cd22&sub=C2EB1907F8B94DE9B34C51388BEA30D1)
-    
+
     配置文件所在目录：tomcat\apache-tomcat-7.0.41\webapps\activiti-app\WEB-INF\classes\META-INF\activiti-app
 
  ![这里写图片描述](https://img-blog.csdn.net/20180404095824661?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
@@ -155,9 +155,9 @@ https://www.activiti.org/download-links
 ###  SpringBoot 整合开发
 
 > github
-    
+
     https://github.com/Activiti/Activiti
- 
+
 > maven
 
 ```
@@ -226,7 +226,7 @@ public class ActivitiConfig  extends AbstractProcessEngineAutoConfiguration {
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
- 
+
  <bean id="processEngineConfiguration" class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">	    
 	 <!-- 连接数据的配置 -->
     <property name="jdbcDriver" value="com.mysql.jdbc.Driver"></property>
@@ -239,7 +239,7 @@ public class ActivitiConfig  extends AbstractProcessEngineAutoConfiguration {
 	<property name="activityFontName" value="宋体"/>
 	<property name="labelFontName" value="宋体"/>
   </bean>
-   
+
 </beans>
 ```
 
@@ -259,7 +259,7 @@ public void createTable() {
 ```
 
 > 打开流程设计器
-    
+
 ![这里写图片描述](https://img-blog.csdn.net/20180404095835456?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 > 开发指导文档
@@ -511,8 +511,18 @@ public class EntryPipeApplication {
 
 
 ## 国内比较成熟的工作流框架
-    
+
 > Lemon OA
-    
+
     http://www.mossle.com/index.do
-    
+
+
+
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！

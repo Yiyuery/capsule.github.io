@@ -229,3 +229,12 @@ tag使用的是构建次数作为版本标记
 4.  [Jenkins与Docker相关的Plugin使用](https://blog.csdn.net/ztsinghua/article/details/52128140)
 5.  [宿主机安装jenkins方案](https://www.jianshu.com/p/a7d7df97fe4b)
 6.  [Shell菜鸟教程](http://www.runoob.com/linux/linux-shell-test.html)
+
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
+
+扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！
