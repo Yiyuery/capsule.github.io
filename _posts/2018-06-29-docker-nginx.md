@@ -8,9 +8,9 @@ tags:
 - nginx
 ---
 
-<架构探险之路> Docker搭建微服务自动部署平台，让我们来了解下Docker中如何安装、使用nginx吧！
+&lt;架构探险之路> Docker搭建微服务自动部署平台，让我们来了解下Docker中如何安装、使用nginx吧！
 
----
+* * *
 
 # Docker 之 Nginx环境搭建
 
@@ -144,69 +144,69 @@ tags:
     ./nginx -s stop
 
 
-	    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
-	    CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                    NAMES
-	    56dfba762876        127.0.0.1:5000/env-nginx:1.0   "/bin/bash"              10 minutes ago      Up 10 minutes       0.0.0.0:8001->80/tcp     brave_kowalevski
-	    d75f05b4d7f8        hyper/docker-registry-web      "start.sh"               5 days ago          Up About an hour    0.0.0.0:8000->8080/tcp   local-docker-res-web
-	    1b5239bc943b        registry                       "/entrypoint.sh /etc…"   5 days ago          Up About an hour    0.0.0.0:5000->5000/tcp   local-docker-res
-	    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker attach 56dfba762876
-	    [root@56dfba762876 sbin]# ls
-	    nginx
-	    [root@56dfba762876 sbin]# cd ..
-	    [root@56dfba762876 nginx]# ls
-	    client_body_temp  conf  fastcgi_temp  html  logs  proxy_temp  sbin  scgi_temp  uwsgi_temp
-	    [root@56dfba762876 nginx]# cd c
-	    client_body_temp/ conf/             
-	    [root@56dfba762876 nginx]# cd conf/
-	    [root@56dfba762876 conf]# ls
-	    fastcgi.conf          fastcgi_params          koi-utf  mime.types          nginx.conf          scgi_params          uwsgi_params          win-utf
-	    fastcgi.conf.default  fastcgi_params.default  koi-win  mime.types.default  nginx.conf.default  scgi_params.default  uwsgi_params.default
-	    [root@56dfba762876 conf]# cd ../sbin/             
-	    [root@56dfba762876 sbin]# ./nginx -s stop
-	    [root@56dfba762876 sbin]# ps -ef|grep nginx
-	    root        30     1  0 07:55 pts/0    00:00:00 grep --color=auto nginx
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
+        CONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                    NAMES
+        56dfba762876        127.0.0.1:5000/env-nginx:1.0   "/bin/bash"              10 minutes ago      Up 10 minutes       0.0.0.0:8001->80/tcp     brave_kowalevski
+        d75f05b4d7f8        hyper/docker-registry-web      "start.sh"               5 days ago          Up About an hour    0.0.0.0:8000->8080/tcp   local-docker-res-web
+        1b5239bc943b        registry                       "/entrypoint.sh /etc…"   5 days ago          Up About an hour    0.0.0.0:5000->5000/tcp   local-docker-res
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker attach 56dfba762876
+        [root@56dfba762876 sbin]# ls
+        nginx
+        [root@56dfba762876 sbin]# cd ..
+        [root@56dfba762876 nginx]# ls
+        client_body_temp  conf  fastcgi_temp  html  logs  proxy_temp  sbin  scgi_temp  uwsgi_temp
+        [root@56dfba762876 nginx]# cd c
+        client_body_temp/ conf/             
+        [root@56dfba762876 nginx]# cd conf/
+        [root@56dfba762876 conf]# ls
+        fastcgi.conf          fastcgi_params          koi-utf  mime.types          nginx.conf          scgi_params          uwsgi_params          win-utf
+        fastcgi.conf.default  fastcgi_params.default  koi-win  mime.types.default  nginx.conf.default  scgi_params.default  uwsgi_params.default
+        [root@56dfba762876 conf]# cd ../sbin/             
+        [root@56dfba762876 sbin]# ./nginx -s stop
+        [root@56dfba762876 sbin]# ps -ef|grep nginx
+        root        30     1  0 07:55 pts/0    00:00:00 grep --color=auto nginx
 
 -   修改路由配置
 
     vi nginx.config
 
 
-	    [root@56dfba762876 conf]# cd ../sbin/
-	    [root@56dfba762876 sbin]# ./nginx
-	    [root@56dfba762876 sbin]# cd ..
-	    [root@56dfba762876 nginx]# cd conf/
-	    [root@56dfba762876 conf]# vi nginx.conf
-	    [root@56dfba762876 conf]# cd ../sbin/
-	    [root@56dfba762876 sbin]# ./nginx -s stop
-	    [root@56dfba762876 sbin]# ./nginx        
-	    [root@56dfba762876 sbin]#   
+        [root@56dfba762876 conf]# cd ../sbin/
+        [root@56dfba762876 sbin]# ./nginx
+        [root@56dfba762876 sbin]# cd ..
+        [root@56dfba762876 nginx]# cd conf/
+        [root@56dfba762876 conf]# vi nginx.conf
+        [root@56dfba762876 conf]# cd ../sbin/
+        [root@56dfba762876 sbin]# ./nginx -s stop
+        [root@56dfba762876 sbin]# ./nginx        
+        [root@56dfba762876 sbin]#   
 
-	    server
-	    {
-	        listen 80;
-	        server_name localhost;
-	        index index.html index.htm index.php;
-	        root /usr/local/nginx/html;
+        server
+        {
+            listen 80;
+            server_name localhost;
+            index index.html index.htm index.php;
+            root /usr/local/nginx/html;
 
-	        location ~ \.php$ {
-	            include fastcgi_params;
-	            fastcgi_pass unix:/tmp/php-fcgi.sock;
-	            fastcgi_index index.php;
-	            fastcgi_param SCRIPT_FILENAME /usr/local/nginx/html$fastcgi_script_name;
-	        }
+            location ~ \.php$ {
+                include fastcgi_params;
+                fastcgi_pass unix:/tmp/php-fcgi.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME /usr/local/nginx/html$fastcgi_script_name;
+            }
 
-	       location /docker-registry-web/ {
-	                    proxy_pass   http://192.168.2.102:8000/;
-	                    proxy_redirect default;
-	            }
-	       location /jenkins/ {
-	                    proxy_pass   http://192.168.2.102:8002/;
-	                    proxy_redirect default;
-	            }
+           location /docker-registry-web/ {
+                        proxy_pass   http://192.168.2.102:8000/;
+                        proxy_redirect default;
+                }
+           location /jenkins/ {
+                        proxy_pass   http://192.168.2.102:8002/;
+                        proxy_redirect default;
+                }
 
-	    }
+        }
 
-  > jenkins通过nginx映射效果
+> jenkins通过nginx映射效果
 
   ![输入图片说明](https://images.gitee.com/uploads/images/2018/0707/173746_df2818fe_912956.png "屏幕截图.png")
 

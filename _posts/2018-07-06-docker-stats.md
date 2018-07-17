@@ -7,9 +7,9 @@ tags:
 - docker
 ---
 
-<架构探险之路> Docker搭建微服务自动部署平台，让我们先来了解下Docker运行中的状态监控和内存控制吧！
+&lt;架构探险之路> Docker搭建微服务自动部署平台，让我们先来了解下Docker运行中的状态监控和内存控制吧！
 
----
+* * *
 
 # Docker 之 运行状态监控
 
@@ -65,11 +65,9 @@ tags:
 
 -   再次查看运行状态
 
-```
-CONTAINER ID        NAME                   CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
-cb7a3cfdeafb        jenkins                113.15%             283.7MiB / 1GiB     27.70%              648B / 0B           11.1MB / 9.31MB     26
-cfa1a6786510        nginx                  0.03%               6.793MiB / 1GiB     0.66%               928B / 0B           385kB / 24.6kB      4
-84ad7ef849b3        local-docker-res-web   0.49%               521.4MiB / 1GiB     50.92%              928B / 0B           74.5MB / 4.1kB      24
-190e85388e0d        local-docker-res       0.00%               3.625MiB / 1GiB     0.35%               1.11kB / 0B         1.29MB / 0B         7
 
-```
+    CONTAINER ID        NAME                   CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+    cb7a3cfdeafb        jenkins                113.15%             283.7MiB / 1GiB     27.70%              648B / 0B           11.1MB / 9.31MB     26
+    cfa1a6786510        nginx                  0.03%               6.793MiB / 1GiB     0.66%               928B / 0B           385kB / 24.6kB      4
+    84ad7ef849b3        local-docker-res-web   0.49%               521.4MiB / 1GiB     50.92%              928B / 0B           74.5MB / 4.1kB      24
+    190e85388e0d        local-docker-res       0.00%               3.625MiB / 1GiB     0.35%               1.11kB / 0B         1.29MB / 0B         7

@@ -7,9 +7,9 @@ tags:
 - docker
 ---
 
-<架构探险之路> Docker搭建微服务自动部署平台，让我们先来了解下CentOS 环境安装、以及Docker的一些常用操作。
+&lt;架构探险之路> Docker搭建微服务自动部署平台，让我们先来了解下CentOS 环境安装、以及Docker的一些常用操作。
 
----
+* * *
 
 # Docker 之 CentOS 环境安装
 
@@ -85,56 +85,49 @@ tags:
 
 > 镜像验证
 
-```
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    xiachaoyang/centos-java   latest              905af87b4a5e        10 minutes ago      587MB
-    centos                    latest              49f7960eb7e4        2 weeks ago         200MB
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run --rm xiachaoyang/centos-java /opt/jdk/bin/java -version
-    java version "1.8.0_172"
-    Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
-    Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
-
-```
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
+        REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+        xiachaoyang/centos-java   latest              905af87b4a5e        10 minutes ago      587MB
+        centos                    latest              49f7960eb7e4        2 weeks ago         200MB
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run --rm xiachaoyang/centos-java /opt/jdk/bin/java -version
+        java version "1.8.0_172"
+        Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
 <font color=red>[备注]</font>
 
     1.  容器通过commit直接生成的镜像使用`docker run -i -t xiachaoyang/centos-java`启动镜像后,需要再次执行source /etc/profile 才能激活环境变量
 
-```
-    [root@288652cb51f3 /]# java -version
-    bash: java: command not found
-    [root@288652cb51f3 /]# source /etc/profile
-    [root@288652cb51f3 /]# java -version
-    java version "1.8.0_172"
-    Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
-    Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
-    [root@288652cb51f3 /]#
-```
+        [root@288652cb51f3 /]# java -version
+        bash: java: command not found
+        [root@288652cb51f3 /]# source /etc/profile
+        [root@288652cb51f3 /]# java -version
+        java version "1.8.0_172"
+        Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+        [root@288652cb51f3 /]#
 
 推荐使用Dockerfile创建镜像
 
     2.  启动镜像后可以多终端访问同一运行中容器
 
-```
-    # 启动一个实例
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run -i -t xiachaoyang/centos-java /bin/bash
-    [root@288652cb51f3 /]#
+        # 启动一个实例
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run -i -t xiachaoyang/centos-java /bin/bash
+        [root@288652cb51f3 /]#
 
-    # 开启新终端查询实例ID并进入
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
-    CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS               NAMES
-    288652cb51f3        xiachaoyang/centos-java   "/bin/bash"         2 minutes ago       Up About a minute                       nifty_bhabha
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker attach 288652cb51f3
-    [root@288652cb51f3 /]#
+        # 开启新终端查询实例ID并进入
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
+        CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS               NAMES
+        288652cb51f3        xiachaoyang/centos-java   "/bin/bash"         2 minutes ago       Up About a minute                       nifty_bhabha
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker attach 288652cb51f3
+        [root@288652cb51f3 /]#
 
-    # 测试运行中实例是否有变化
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
-    CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS               NAMES
-    288652cb51f3        xiachaoyang/centos-java   "/bin/bash"         2 minutes ago       Up 2 minutes                            nifty_bhabha
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
-```
+        # 测试运行中实例是否有变化
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
+        CONTAINER ID        IMAGE                     COMMAND             CREATED             STATUS              PORTS               NAMES
+        288652cb51f3        xiachaoyang/centos-java   "/bin/bash"         2 minutes ago       Up 2 minutes                            nifty_bhabha
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
     3.  多个终端链接同一镜像，退出后整体退出。
     所有操作都是并行的，A输入cmd1,B也同样出现cmd1
@@ -145,14 +138,12 @@ tags:
 
     不能,推送类似于git操作，需要权限。
 
-```
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker push centos
-    The push refers to repository [docker.io/library/centos]
-    bcc97fbfc9e1: Layer already exists
-    errors:
-    denied: requested access to the resource is denied
-    unauthorized: authentication required
-```
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker push centos
+        The push refers to repository [docker.io/library/centos]
+        bcc97fbfc9e1: Layer already exists
+        errors:
+        denied: requested access to the resource is denied
+        unauthorized: authentication required
 
     5.  对于本地库中镜像的操作(运行容器并修改部分东西)，能否覆盖提交，能否提交到仓库同名下，还是说需要利用tag进行标记？
 
@@ -161,7 +152,6 @@ tags:
 [创建本地镜像(commit、Dockerfile)](https://blog.csdn.net/u010246789/article/details/54139168)
 
     6.  同一镜像生成的不同ID的容器，互相之间不受影响，修改在退出后也不会保存
-
 
 > 镜像推送
 
@@ -179,18 +169,17 @@ tags:
 
     docker push xiachaoyang/env-jdk
 
-```
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
-    REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
-    xiachaoyang/env-jdk   latest              abe21e6640f3        13 hours ago        587MB
-    centos                latest              49f7960eb7e4        2 weeks ago         200MB
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker push xiachaoyang/env-jdk
-    The push refers to repository [docker.io/xiachaoyang/env-jdk]
-    f65468761332: Pushed
-    5ed6bb2dd837: Pushed
-    bcc97fbfc9e1: Mounted from library/centos
-    latest: digest: sha256:a7f0324eae38d9ce41389bccd43c92f3fa9d8a1a1dbe5ff52d6be978815fb267 size: 949
-```
+
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
+        REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+        xiachaoyang/env-jdk   latest              abe21e6640f3        13 hours ago        587MB
+        centos                latest              49f7960eb7e4        2 weeks ago         200MB
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker push xiachaoyang/env-jdk
+        The push refers to repository [docker.io/xiachaoyang/env-jdk]
+        f65468761332: Pushed
+        5ed6bb2dd837: Pushed
+        bcc97fbfc9e1: Mounted from library/centos
+        latest: digest: sha256:a7f0324eae38d9ce41389bccd43c92f3fa9d8a1a1dbe5ff52d6be978815fb267 size: 949
 
 -   搜索镜像
 
@@ -200,65 +189,58 @@ tags:
 
 > 镜像功能测试
 
-```
-    # 查询运行中容器
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
-    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run -i -t xiachaoyang/centos-java /bin/bash
-    [root@288652cb51f3 /]#
-```
+        # 查询运行中容器
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
+        CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run -i -t xiachaoyang/centos-java /bin/bash
+        [root@288652cb51f3 /]#
 
 > Dockerfile 创建镜像
 
-```
-    xiazhaoyangdeMacBook-Pro:Dockerfile         jdk-8u172-linux-x64.tar.gz
-    xiazhaoyangdeMacBook-Pro:jdk-8u172-linux-x64 xiazhaoyang$ docker build -t xiachaoyang/centos-java .
-    Sending build context to Docker daemon  190.9MB
-    Step 1/7 : FROM centos:latest
-    ---> 49f7960eb7e4
-    Step 2/7 : MAINTAINER  "xiachaoyang"<xiazhaoyang@live.com>
-    ---> Using cache
-    ---> c1009b593364
-    Step 3/7 : ADD jdk-8u172-linux-x64.tar.gz /opt
-    ---> Using cache
-    ---> 9c32f5eacb71
-    Step 4/7 : RUN ln -s /opt/jdk-8u172-linux-x64 /opt/jdk
-    ---> Running in 23a59c89c7be
-    Removing intermediate container 23a59c89c7be
-    ---> 99b3d5d9446c
-    Step 5/7 : ENV JAVA_HOME /opt/jdk
-    ---> Running in f70d6dd4dda2
-    Removing intermediate container f70d6dd4dda2
-    ---> 685cd05aa266
-    Step 6/7 : ENV PATH $JAVA_HOME/bin:$PATH
-    ---> Running in 934a8279744d
-    Removing intermediate container 934a8279744d
-    ---> 75f551548c7a
-    Step 7/7 : CMD java -version
-    ---> Running in 9ff68222bc64
-    Removing intermediate container 9ff68222bc64
-    ---> f1992f5f7b4c
-    Successfully built f1992f5f7b4c
-    Successfully tagged xiachaoyang/centos-java:latest
-```
+        xiazhaoyangdeMacBook-Pro:Dockerfile         jdk-8u172-linux-x64.tar.gz
+        xiazhaoyangdeMacBook-Pro:jdk-8u172-linux-x64 xiazhaoyang$ docker build -t xiachaoyang/centos-java .
+        Sending build context to Docker daemon  190.9MB
+        Step 1/7 : FROM centos:latest
+        ---> 49f7960eb7e4
+        Step 2/7 : MAINTAINER  "xiachaoyang"<xiazhaoyang@live.com>
+        ---> Using cache
+        ---> c1009b593364
+        Step 3/7 : ADD jdk-8u172-linux-x64.tar.gz /opt
+        ---> Using cache
+        ---> 9c32f5eacb71
+        Step 4/7 : RUN ln -s /opt/jdk-8u172-linux-x64 /opt/jdk
+        ---> Running in 23a59c89c7be
+        Removing intermediate container 23a59c89c7be
+        ---> 99b3d5d9446c
+        Step 5/7 : ENV JAVA_HOME /opt/jdk
+        ---> Running in f70d6dd4dda2
+        Removing intermediate container f70d6dd4dda2
+        ---> 685cd05aa266
+        Step 6/7 : ENV PATH $JAVA_HOME/bin:$PATH
+        ---> Running in 934a8279744d
+        Removing intermediate container 934a8279744d
+        ---> 75f551548c7a
+        Step 7/7 : CMD java -version
+        ---> Running in 9ff68222bc64
+        Removing intermediate container 9ff68222bc64
+        ---> f1992f5f7b4c
+        Successfully built f1992f5f7b4c
+        Successfully tagged xiachaoyang/centos-java:latest
 
 > 标记版本信息
 
-```
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    xiachaoyang/centos-java   latest              f1992f5f7b4c        2 minutes ago       587MB
-    xiachaoyang/centos-java   <none>              905af87b4a5e        10 hours ago        587MB
-    centos                    latest              49f7960eb7e4        2 weeks ago         200MB
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker tag 905af87b4a5e xiachaoyang/centos-java:1.0
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
-    REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
-    xiachaoyang/centos-java   latest              f1992f5f7b4c        3 minutes ago       587MB
-    xiachaoyang/centos-java   1.0                 905af87b4a5e        10 hours ago        587MB
-    centos                    latest              49f7960eb7e4        2 weeks ago         200MB
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
-
-```
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
+        REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+        xiachaoyang/centos-java   latest              f1992f5f7b4c        2 minutes ago       587MB
+        xiachaoyang/centos-java   <none>              905af87b4a5e        10 hours ago        587MB
+        centos                    latest              49f7960eb7e4        2 weeks ago         200MB
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker tag 905af87b4a5e xiachaoyang/centos-java:1.0
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
+        REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+        xiachaoyang/centos-java   latest              f1992f5f7b4c        3 minutes ago       587MB
+        xiachaoyang/centos-java   1.0                 905af87b4a5e        10 hours ago        587MB
+        centos                    latest              49f7960eb7e4        2 weeks ago         200MB
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
 > 提交(运行中容器提交为镜像)
 
@@ -302,13 +284,12 @@ tags:
 
       jdk文件解压文件名非原tgz的文件名，导致ln命令的符号链接显示红色闪烁，是由于文件不存在导致，调整Dockerfile构建文件后可以正常生成
 
-```
-    # 运行镜像测试
-    xiazhaoyangdeMacBook-Pro:jdk-8u172-linux-x64 xiazhaoyang$ docker run --rm xiachaoyang/env-jdk java -version
-    java version "1.8.0_172"
-    Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
-    Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
-```
+
+        # 运行镜像测试
+        xiazhaoyangdeMacBook-Pro:jdk-8u172-linux-x64 xiazhaoyang$ docker run --rm xiachaoyang/env-jdk java -version
+        java version "1.8.0_172"
+        Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+        Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
 
 > 查看容器列表信息
 
@@ -331,18 +312,16 @@ tags:
     \-v : 数据卷选项，表示将宿主机的~/docker-registry 目录映射为容器的/tmp/registry
     \-restart：docker服务重启后总是重启此容器
 
-```
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run -d -p 50000:5000 -v ~/docker-registry:/tmp/registry --name local_res registry
-    5c08afe92712746db4fb48e02b5b274e205e7dce3cb38395846ca57b5d387c5e
-    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
-    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
-    5c08afe92712        registry            "/entrypoint.sh /etc…"   27 seconds ago      Up 26 seconds       0.0.0.0:50000->5000/tcp   determined_banach
-```
+
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run -d -p 50000:5000 -v ~/docker-registry:/tmp/registry --name local_res registry
+        5c08afe92712746db4fb48e02b5b274e205e7dce3cb38395846ca57b5d387c5e
+        xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
+        CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+        5c08afe92712        registry            "/entrypoint.sh /etc…"   27 seconds ago      Up 26 seconds       0.0.0.0:50000->5000/tcp   determined_banach
 
   访问`http://127.0.0.1:5000/v2/_catalog?n=100`查看仓库
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0628/074208_29beb849_912956.png "屏幕截图.png")
-
 
     > 下载web服务
     docker run -it -p 8000:8080 --restart=always --name local-docker-res-web --link local-docker-res  -e REGISTRY_URL=http://local-docker-res:5000/v2 -e REGISTRY_NAME=localhost:5000 hyper/docker-registry-web
@@ -381,22 +360,19 @@ tags:
 
 > 本地仓库web服务
 
-- 界面效果
+-   界面效果
 
-  访问`http://127.0.0.1:8000/`查看仓库web界面
+    访问`http://127.0.0.1:8000/`查看仓库web界面
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0627/084528_1210837e_912956.png "屏幕截图.png")
 
-- 测试本地仓库推送
+-   测试本地仓库推送
 
 > 可能出现的push失败
 
-```
-$ docker push 127.0.0.1:5000/xiachaoyang/env-jdk
-The push refers to a repository [127.0.0.1:5000/xiachoayang/env-jdk]
-Get https://127.0.0.1:5000/v1/_ping: http: server gave HTTP response to HTTPS client
-
-```
+    $ docker push 127.0.0.1:5000/xiachaoyang/env-jdk
+    The push refers to a repository [127.0.0.1:5000/xiachoayang/env-jdk]
+    Get https://127.0.0.1:5000/v1/_ping: http: server gave HTTP response to HTTPS client
 
 这是因为Docker在1.3.x之后默认docker registry使用的是https，为了解决这个问题，Linux中修改本地主机的docker启动配置文件，添加
 
@@ -405,93 +381,84 @@ Get https://127.0.0.1:5000/v1/_ping: http: server gave HTTP response to HTTPS cl
 Docker for Mac中在图形化终端上修改如下，填写后“Apply&Restart”。
 
  ![输入图片说明](https://gitee.com/uploads/images/2018/0628/075348_73a1395f_912956.png "屏幕截图.png")
-```
-docker images
-REPOSITORY                            TAG                 IMAGE ID            CREATED             SIZE
-127.0.0.1:50000/xiachaoyang/env-jdk   latest              abe21e6640f3        2 days ago          587MB
-xiachaoyang/env-jdk                   latest              abe21e6640f3        2 days ago          587MB
-centos                                latest              49f7960eb7e4        3 weeks ago         200MB
-registry                              latest              d1fd7d86a825        5 months ago        33.3MB
-hyper/docker-registry-web             latest              0db5683824d8        20 months ago       599MB
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker tag abe21e6640f3  127.0.0.1:5000/xiachaoyang/env-jdk
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker push 127.0.0.1:5000/xiachaoyang/env-jdk
-The push refers to repository [127.0.0.1:5000/xiachaoyang/env-jdk]
-f65468761332: Pushed
-5ed6bb2dd837: Pushing [===============>                                   ]  120.4MB/387.4MB
-bcc97fbfc9e1: Pushing [=======================>                           ]  94.75MB/199.7MB
-```
 
-- 查看推送结果
+    docker images
+    REPOSITORY                            TAG                 IMAGE ID            CREATED             SIZE
+    127.0.0.1:50000/xiachaoyang/env-jdk   latest              abe21e6640f3        2 days ago          587MB
+    xiachaoyang/env-jdk                   latest              abe21e6640f3        2 days ago          587MB
+    centos                                latest              49f7960eb7e4        3 weeks ago         200MB
+    registry                              latest              d1fd7d86a825        5 months ago        33.3MB
+    hyper/docker-registry-web             latest              0db5683824d8        20 months ago       599MB
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker tag abe21e6640f3  127.0.0.1:5000/xiachaoyang/env-jdk
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker push 127.0.0.1:5000/xiachaoyang/env-jdk
+    The push refers to repository [127.0.0.1:5000/xiachaoyang/env-jdk]
+    f65468761332: Pushed
+    5ed6bb2dd837: Pushing [===============>                                   ]  120.4MB/387.4MB
+    bcc97fbfc9e1: Pushing [=======================>                           ]  94.75MB/199.7MB
+
+-   查看推送结果
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0627/085153_d505cca3_912956.png "屏幕截图.png")
 
+-   删除镜像后测试本地仓库
 
-- 删除镜像后测试本地仓库
 
-```
-docker images
-REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
-centos                      latest              49f7960eb7e4        3 weeks ago         200MB
-registry                    latest              d1fd7d86a825        5 months ago        33.3MB
-hyper/docker-registry-web   latest              0db5683824d8        20 months ago       599MB
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker pull 127.0.0.1:5000/xiachaoyang/env-jdk
-Using default tag: latest
-latest: Pulling from xiachaoyang/env-jdk
-7dc0dca2b151: Already exists
-71ed27c83409: Pull complete
-b7e1a9577e86: Pull complete
-Digest: sha256:a7f0324eae38d9ce41389bccd43c92f3fa9d8a1a1dbe5ff52d6be978815fb267
-Status: Downloaded newer image for 127.0.0.1:5000/xiachaoyang/env-jdk:latest
-```
+    docker images
+    REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE
+    centos                      latest              49f7960eb7e4        3 weeks ago         200MB
+    registry                    latest              d1fd7d86a825        5 months ago        33.3MB
+    hyper/docker-registry-web   latest              0db5683824d8        20 months ago       599MB
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker pull 127.0.0.1:5000/xiachaoyang/env-jdk
+    Using default tag: latest
+    latest: Pulling from xiachaoyang/env-jdk
+    7dc0dca2b151: Already exists
+    71ed27c83409: Pull complete
+    b7e1a9577e86: Pull complete
+    Digest: sha256:a7f0324eae38d9ce41389bccd43c92f3fa9d8a1a1dbe5ff52d6be978815fb267
+    Status: Downloaded newer image for 127.0.0.1:5000/xiachaoyang/env-jdk:latest
 
-- 运行容器
+-   运行容器
 
-```
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
-REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
-127.0.0.1:5000/xiachaoyang/env-jdk   latest              abe21e6640f3        2 days ago          587MB
-centos                               latest              49f7960eb7e4        3 weeks ago         200MB
-registry                             latest              d1fd7d86a825        5 months ago        33.3MB
-hyper/docker-registry-web            latest              0db5683824d8        20 months ago       599MB
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run --rm 127.0.0.1:5000/xiachaoyang/env-jdk java -version
-java version "1.8.0_172"
-Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
-Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
-```
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker images
+    REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+    127.0.0.1:5000/xiachaoyang/env-jdk   latest              abe21e6640f3        2 days ago          587MB
+    centos                               latest              49f7960eb7e4        3 weeks ago         200MB
+    registry                             latest              d1fd7d86a825        5 months ago        33.3MB
+    hyper/docker-registry-web            latest              0db5683824d8        20 months ago       599MB
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker run --rm 127.0.0.1:5000/xiachaoyang/env-jdk java -version
+    java version "1.8.0_172"
+    Java(TM) SE Runtime Environment (build 1.8.0_172-b11)
+    Java HotSpot(TM) 64-Bit Server VM (build 25.172-b11, mixed mode)
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
 <font color="red">docker restart 【容器ID】重新命令会保留挂参启动的配置信息 </font>
 
-```
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
-CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS                    NAMES
-9b17f2a0c10b        hyper/docker-registry-web   "start.sh"          23 hours ago        Up 23 hours         0.0.0.0:8000->8080/tcp   local-docker-res-web
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker container ls -a
-CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS                     PORTS                    NAMES
-9b17f2a0c10b        hyper/docker-registry-web   "start.sh"               23 hours ago        Up 23 hours                0.0.0.0:8000->8080/tcp   local-docker-res-web
-353ec8eb8c91        registry                    "/entrypoint.sh /etc…"   23 hours ago        Exited (2) 2 minutes ago                            local-docker-res
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker restart 353ec8eb8c91
-353ec8eb8c91
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker container ls -a
-CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS              PORTS                    NAMES
-9b17f2a0c10b        hyper/docker-registry-web   "start.sh"               23 hours ago        Up 23 hours         0.0.0.0:8000->8080/tcp   local-docker-res-web
-353ec8eb8c91        registry                    "/entrypoint.sh /etc…"   23 hours ago        Up 3 seconds        0.0.0.0:5000->5000/tcp   local-docker-res
-xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker ps
+    CONTAINER ID        IMAGE                       COMMAND             CREATED             STATUS              PORTS                    NAMES
+    9b17f2a0c10b        hyper/docker-registry-web   "start.sh"          23 hours ago        Up 23 hours         0.0.0.0:8000->8080/tcp   local-docker-res-web
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker container ls -a
+    CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS                     PORTS                    NAMES
+    9b17f2a0c10b        hyper/docker-registry-web   "start.sh"               23 hours ago        Up 23 hours                0.0.0.0:8000->8080/tcp   local-docker-res-web
+    353ec8eb8c91        registry                    "/entrypoint.sh /etc…"   23 hours ago        Exited (2) 2 minutes ago                            local-docker-res
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker restart 353ec8eb8c91
+    353ec8eb8c91
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$ docker container ls -a
+    CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS              PORTS                    NAMES
+    9b17f2a0c10b        hyper/docker-registry-web   "start.sh"               23 hours ago        Up 23 hours         0.0.0.0:8000->8080/tcp   local-docker-res-web
+    353ec8eb8c91        registry                    "/entrypoint.sh /etc…"   23 hours ago        Up 3 seconds        0.0.0.0:5000->5000/tcp   local-docker-res
+    xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
-```
+-   查看本地磁盘挂载中镜像
 
-- 查看本地磁盘挂载中镜像
-
-  若未找到本地镜像位置：需了解Docker在Mac中的数据卷挂载相关知识
-
+    若未找到本地镜像位置：需了解Docker在Mac中的数据卷挂载相关知识
 
 ## 镜像源配置
 
 > Mac下修改镜像源和阿里云镜像加速
 
-- 阿里云注册和购买
-- 产品和服务中选择容器镜像服务
+-   阿里云注册和购买
+-   产品和服务中选择容器镜像服务
 
 [Aliyun提供的Docker for Mac 安装包下载目录](http://mirrors.aliyun.com/docker-toolbox/mac/docker-for-mac/)
 
@@ -503,21 +470,19 @@ xiazhaoyangdeMacBook-Pro:~ xiazhaoyang$
 
     docker info
 
-```
-# http://hub-mirror.c.163.com/为网易docker镜像源
+    # http://hub-mirror.c.163.com/为网易docker镜像源
 
-Insecure Registries:
- 127.0.0.0/8
-Registry Mirrors:
- http://hub-mirror.c.163.com/
- https://xxxx.mirror.aliyuncs.com/
-Live Restore Enabled: false
+    Insecure Registries:
+     127.0.0.0/8
+    Registry Mirrors:
+     http://hub-mirror.c.163.com/
+     https://xxxx.mirror.aliyuncs.com/
+    Live Restore Enabled: false
 
-```
   配置后可以明显加快镜像拉取速度.
 
 ## REFRENCES
 
-1. [Dockerfile构建镜像](https://blog.csdn.net/qinyushuang/article/details/43342553)
-2. [Docker私有仓库搭建](https://www.jianshu.com/p/9cf9d1c8b00c)
-3. [Dcoker数据卷挂载](https://yeasy.gitbooks.io/docker_practice/content/data_management/volume.html)
+1.  [Dockerfile构建镜像](https://blog.csdn.net/qinyushuang/article/details/43342553)
+2.  [Docker私有仓库搭建](https://www.jianshu.com/p/9cf9d1c8b00c)
+3.  [Dcoker数据卷挂载](https://yeasy.gitbooks.io/docker_practice/content/data_management/volume.html)

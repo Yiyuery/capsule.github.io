@@ -8,33 +8,34 @@ tags:
 - jenkins
 ---
 
-<架构探险之路> Docker搭建微服务自动部署平台，让我们来看看如何实现基于Docker的Jenkins自动化部署。
+&lt;架构探险之路> Docker搭建微服务自动部署平台，让我们来看看如何实现基于Docker的Jenkins自动化部署。
 
----
+* * *
 
 # Docker 之 Jenkins自动化部署
 
 > 构建思路
 
-  - Docker 安装jenkins,用来拉取代码自动更新
-  - Docker 安装gitlab，用来局域网或本地管理代码
-  - Docker 安装本地镜像仓库registry、docker-register-web
-  - Spring Boot 开发代码后编写Dokcerfile文件
-  - Spring Boot 利用docker的mvn插件测试镜像的生成和推送
-  - 测试镜像运行
+-   Docker 安装jenkins,用来拉取代码自动更新
+-   Docker 安装gitlab，用来局域网或本地管理代码
+-   Docker 安装本地镜像仓库registry、docker-register-web
+-   Spring Boot 开发代码后编写Dokcerfile文件
+-   Spring Boot 利用docker的mvn插件测试镜像的生成和推送
+-   测试镜像运行
 
-  ---
+    * * *
 
-  镜像的自动构建分两种情况：
-  > jenkins所在容器中已部署docker服务
+    镜像的自动构建分两种情况：
 
-    直接在构建中利用shell脚本完成Dokcerfile文件的复制和执行，进而在jenkins所在容器内完成镜像的构建
+    > jenkins所在容器中已部署docker服务
 
-  > jenkins所在容器中未部署docker服务
+      直接在构建中利用shell脚本完成Dokcerfile文件的复制和执行，进而在jenkins所在容器内完成镜像的构建
 
-    - jenkins中利用Docker插件实现镜像构建
-    - jenkins 全局工具配置中安装docker[自动安装]
-    - 将jenkins部署在宿主机上，重复上述关联步骤。gitlab可切换为github、gitee
+    > jenkins所在容器中未部署docker服务
+
+    -   jenkins中利用Docker插件实现镜像构建
+    -   jenkins 全局工具配置中安装docker[自动安装]
+    -   将jenkins部署在宿主机上，重复上述关联步骤。gitlab可切换为github、gitee
 
 > 为了提升镜像的自动构建速度，最终采用本地部署jenkins的方式，因为宿主机是有docker运行环境的。
 
@@ -116,54 +117,53 @@ tags:
     > 定时构建
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/153254_fdb58023_912956.png "屏幕截图.png")
-    表示每10分钟执行一次，用H不用*，是为了降低同一时间执行多个构建所带来的性能开销，使用H可以将具体的构建时间进行Hash
+    表示每10分钟执行一次，用H不用\*，是为了降低同一时间执行多个构建所带来的性能开销，使用H可以将具体的构建时间进行Hash
 
-- shell脚本自动化构建Docker镜像
+-   shell脚本自动化构建Docker镜像
 
-  > 可用环境变量
+    > 可用环境变量
 
-  ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/161355_63c54625_912956.png "屏幕截图.png")
+    ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/161355_63c54625_912956.png "屏幕截图.png")
 
-```
-# 定义变量
-API_NAME="msa-api-hello"
-API_VERSION="0.0.1"
-API_PORT="8101"
-IMAGE_NAME="127.0.0.1:5000/com.msa/$API_NAME:$BUILD_NUMBER"
-CONTAINER_NAME=$API_NAME-$API_VERSION
 
-# 进入target目录并复制Dockerfile文件
-cd $WORKSPACE/target
-cp classes/Dockerfile .
+    # 定义变量
+    API_NAME="msa-api-hello"
+    API_VERSION="0.0.1"
+    API_PORT="8101"
+    IMAGE_NAME="127.0.0.1:5000/com.msa/$API_NAME:$BUILD_NUMBER"
+    CONTAINER_NAME=$API_NAME-$API_VERSION
 
-# 构建Docker镜像
-docker build -t $IMAGE_NAME .
+    # 进入target目录并复制Dockerfile文件
+    cd $WORKSPACE/target
+    cp classes/Dockerfile .
 
-# 推送Docker镜像
-docker push $IMAGE_NAME
+    # 构建Docker镜像
+    docker build -t $IMAGE_NAME .
 
-# 删除Docker容器
-cid=$(docker ps | grep $CONTAINER_NAME |awk '{print $1}')
-if [ x"$cid" != x ]
-	then
-   	docker rm -f $cid
-fi
+    # 推送Docker镜像
+    docker push $IMAGE_NAME
 
-# 启动Docker容器
-docker run -d -p $API_PORT:8080 --name $CONTAINER_NAME $IMAGE_NAME
+    # 删除Docker容器
+    cid=$(docker ps | grep $CONTAINER_NAME |awk '{print $1}')
+    if [ x"$cid" != x ]
+    	then
+       	docker rm -f $cid
+    fi
 
-# 删除Dockerfile文件
-rm -f Dockerfile
+    # 启动Docker容器
+    docker run -d -p $API_PORT:8080 --name $CONTAINER_NAME $IMAGE_NAME
 
-```
+    # 删除Dockerfile文件
+    rm -f Dockerfile
+
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/155135_4d07d8dc_912956.png "屏幕截图.png")
 
-  > 提升maven构建速度
+> 提升maven构建速度
 
   maven clean install -Dmaven.test.skip=true
   跨过测试类的执行
 
-  > jenkins 无法通过shell脚本进行docker镜像的构建
+> jenkins 无法通过shell脚本进行docker镜像的构建
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/164418_6303bc80_912956.png "屏幕截图.png")
 
@@ -175,7 +175,7 @@ rm -f Dockerfile
     - Docker-outside-of-Docker [DooD]
     - 使用Jenkins的Docker插件
 
----
+* * *
 
 ## 自动构建并发布
 
@@ -206,25 +206,25 @@ tag使用的是构建次数作为版本标记
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143538_c8498d9b_912956.png "屏幕截图.png")
 
-  - 仓库
+-   仓库
 
-  ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143731_7b31750e_912956.png "屏幕截图.png")
+    ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143731_7b31750e_912956.png "屏幕截图.png")
 
-  - 运行
+-   运行
 
-  ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143844_c6d296e2_912956.png "屏幕截图.png")
+    ![输入图片说明](https://images.gitee.com/uploads/images/2018/0715/143844_c6d296e2_912956.png "屏幕截图.png")
 
 `备注：`
 
-  - 初次构建速度比较慢，后面由于镜像缓存、maven依赖的下载完成，构件速度会变快很多。
-  - shell脚本遇到问题请自行学习相关知识
-  - 轻量级微服务的自动化发布平台，主要实现思路：Jenkins从GitLab中获取源码，构建后生成docker镜像，以Docker容器的方式进行发布，此外，我还将生成的Docker镜像推送到本地的Docker Registry，以供生产环境使用。如此，我们交付的不再是源码，而是Docker镜像，这种方式更加简单高效。
+-   初次构建速度比较慢，后面由于镜像缓存、maven依赖的下载完成，构件速度会变快很多。
+-   shell脚本遇到问题请自行学习相关知识
+-   轻量级微服务的自动化发布平台，主要实现思路：Jenkins从GitLab中获取源码，构建后生成docker镜像，以Docker容器的方式进行发布，此外，我还将生成的Docker镜像推送到本地的Docker Registry，以供生产环境使用。如此，我们交付的不再是源码，而是Docker镜像，这种方式更加简单高效。
 
 ## REFRENCES
 
 1.  [Jenkins Wiki](https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+with+Docker)
 2.  [Jenkins 安装教程](http://www.cnblogs.com/stulzq/p/8627360.html)
 3.  [Jenkins 利用maven、git管理项目](https://jingyan.baidu.com/album/597a06433ff422312a52436f.html?picindex=1)
-4. [Jenkins与Docker相关的Plugin使用](https://blog.csdn.net/ztsinghua/article/details/52128140)
-5. [宿主机安装jenkins方案](https://www.jianshu.com/p/a7d7df97fe4b)
-6. [Shell菜鸟教程](http://www.runoob.com/linux/linux-shell-test.html)
+4.  [Jenkins与Docker相关的Plugin使用](https://blog.csdn.net/ztsinghua/article/details/52128140)
+5.  [宿主机安装jenkins方案](https://www.jianshu.com/p/a7d7df97fe4b)
+6.  [Shell菜鸟教程](http://www.runoob.com/linux/linux-shell-test.html)
