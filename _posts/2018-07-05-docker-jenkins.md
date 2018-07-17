@@ -125,7 +125,7 @@ tags:
 
     ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/161355_63c54625_912956.png "屏幕截图.png")
 
-
+```
     # 定义变量
     API_NAME="msa-api-hello"
     API_VERSION="0.0.1"
@@ -155,6 +155,7 @@ tags:
 
     # 删除Dockerfile文件
     rm -f Dockerfile
+```
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/155135_4d07d8dc_912956.png "屏幕截图.png")
 
