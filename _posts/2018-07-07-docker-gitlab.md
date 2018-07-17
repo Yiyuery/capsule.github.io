@@ -8,34 +8,34 @@ tags:
 - gitlab
 ---
 
-<架构探险之路> Docker搭建微服务自动部署平台，让我们来了解下基于Docker的gitlab局域网代码托管吧！
+&lt;架构探险之路> Docker搭建微服务自动部署平台，让我们来了解下基于Docker的gitlab局域网代码托管吧！
 
----
+* * *
 
 # Docker 之 GitLab 局域网代码托管
 
 ## 部署
 
-- 拉取镜像
+-   拉取镜像
 
-  docker pull gitlab/gitlab-ce
+    docker pull gitlab/gitlab-ce
 
-- 本地域名DNS映射配置
+-   本地域名DNS映射配置
 
-  sudo vi /etc/hosts
-  添加 127.0.0.1 gitlab.yiyuery.com
+    sudo vi /etc/hosts
+    添加 127.0.0.1 gitlab.yiyuery.com
 
-- 运行
+-   运行
 
-  docker run -d -m 1024m -h gitlab.yiyuery.com -p 22:22 -p 80:80 -v ~/gitlab/etc:/etc/gitlab -v ~/gitlab/log:/var/log/gitlab -v ~/gitlab/opt:/var/opt/gitlab --name gitlab --restart=always gitlab/gitlab-ce
+    docker run -d -m 1024m -h gitlab.yiyuery.com -p 22:22 -p 80:80 -v ~/gitlab/etc:/etc/gitlab -v ~/gitlab/log:/var/log/gitlab -v ~/gitlab/opt:/var/opt/gitlab --name gitlab --restart=always gitlab/gitlab-ce
 
 `此处需注意关闭其他占用80端口的进程`
 
     域名的映射默认使用的是80端口
 
-- git 操作
+-   git 操作
 
-  创建gitlab工程
+    创建gitlab工程
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/0708/100245_fe2789c0_912956.png "屏幕截图.png")
 
