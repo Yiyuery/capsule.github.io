@@ -205,4 +205,4 @@ SpringMVC用于处理视图最重要的两个接口是ViewResolver和View。View
 <img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
 </center>
 
-扫码关注或搜索`架构探险之道`获取最新文章，坚持每周一更，坚持技术分享的我和你们一起成长 ^_^ ！
+扫码关注或搜索`架构探险之道`获取最新文章，不积跬步无以至千里，坚持每周一更，坚持技术分享。我和你们一起成长 ^_^ ！
