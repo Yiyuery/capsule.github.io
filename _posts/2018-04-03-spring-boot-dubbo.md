@@ -35,7 +35,7 @@ Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分�
 
 > 项目结构
 
-![这里写图片描述](http://img.blog.csdn.net/20180225164804164?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0718/224909_a405f7c6_912956.png "在这里输入图片标题")
 
 
 > parent-pom
@@ -491,7 +491,7 @@ spring-boot可以直接通过appication的启动类来启动项目，但是由�
 
     localhost:8080/
 
-![image](http://img.blog.csdn.net/20180225164506439?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2luYXRfMjg2OTA0MTc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0718/225039_fc01c238_912956.png "在这里输入图片标题")
 
 
 ## provider和consumer xml
