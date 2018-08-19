@@ -19,11 +19,13 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
     - Swagger是世界上最大的框架API开发工具的API规范（OAS），从设计、文档、测试和部署上努力使整个API开发生命周期大大缩短。
     - 随着互联网技术的发展，现在的网站架构基本都由原来的后端渲染，变成了：前端渲染、前后端分离的形态。
     - 微服务REST-API的方式链接前端和后台。
-具体的可以看这里[API 的撰写 - 契约](https://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&mid=402114651&idx=1&sn=a7b891f532e29b73afd83f17ae071023&scene=1&srcid=0331zejNfNvZ5ccJEdBpJxIr&from=singlemessage&isappinstalled=0#wechat_redirect)
+
+>具体的可以看这里
+[API 的撰写 - 契约](https://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&mid=402114651&idx=1&sn=a7b891f532e29b73afd83f17ae071023&scene=1&srcid=0331zejNfNvZ5ccJEdBpJxIr&from=singlemessage&isappinstalled=0#wechat_redirect)
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/204725_ad0549ad_912956.png "20170827202033991.png")
 
-## 整合方式
+## SpringMVC 整合方式
 
 > maven
 
@@ -118,8 +120,6 @@ Swagger是世界上最大的框架API开发工具的API规范（OAS），从设�
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
-
 ```
 
 > Controller控制器和SwaggerConfiguration配置类的扫描（或bean标签实例）
@@ -180,7 +180,6 @@ public class UserController {
 }
 
 ```    
-
     - SwaggerConfiguration
 
 ```java
@@ -232,6 +231,7 @@ public class SwaggerConfiguration {
                 .apiInfo(apiInfo())
                 .select()
                 .paths(defaultPathsRex())
+                //pathMapping("/xcy-web")会统一在该接口分组下的接口前加上前缀 "/xcy-web"
                 .build().pathMapping("/");
     }
 
@@ -270,6 +270,77 @@ public class SwaggerConfiguration {
 
 ```
 
+> 标签描述定义 & 多路径接口扫描
+
+```
+@Bean
+public Docket apiDocket() {
+    return (new Docket(DocumentationType.SWAGGER_2)).groupName("api")        
+    .produces(this.produce())
+    .pathMapping("/api")
+    .globalOperationParameters(this.setHeaderToken())
+    .apiInfo(this.apiInfo())
+    .tags(new Tag("权限接口", "菜单、区域、组织、资源等权限判断"), new Tag[]{new Tag("用户接口", "按条件查询用户、修改密码、获取加密参数"), new Tag("认证接口", "WEB登录、客户端登录、自动登录、获取验证码"), new Tag("数据迁移接口", "海燕数据迁移至海豚")})
+    .select()
+    .apis(Predicates.or(new Predicate[]{RequestHandlerSelectors.basePackage("com.hikvision.isfd.privilege.api"), RequestHandlerSelectors.basePackage("com.hikvision.isfd.user.api"), RequestHandlerSelectors.basePackage("com.hikvision.isfd.userauth.api")}))
+    .build();
+}
+
+@Bean
+public Docket uiDocket() {
+    return (new Docket(DocumentationType.SWAGGER_2))
+    .groupName("ui")
+    .produces(this.produce())
+    .pathMapping("/ui")
+    .apiInfo(this.uiInfo())
+    .tags(new Tag("用户接口", "用户添加、查询、修改、删除、导入导出等接口"), new Tag[]{new Tag("用户组接口", "用户组添加、修改、删除、查询等接口"), new Tag("用户实名人员信息获取接口", "获取人员组织相关的接口"), new Tag("AD域接口", "获取Windows域组织架构以及用户接口"), new Tag("角色相关接口", "添加角色、修改角色、删除角色、查询角色等相关接口"), new Tag("角色权限配置接口", "查询角色权限、查询资源类型、更新角色权限等相关接口")})
+    .select()
+    .apis(Predicates.or(RequestHandlerSelectors.basePackage("com.hikvision.isfd.privilege.role.action"), RequestHandlerSelectors.basePackage("com.hikvision.isfd.user.action")))
+    .build();
+}
+
+```
+
+> 源码分析（多路径自定义扫描控制）
+
+```
+public class ApiSelectorBuilder {
+  ...
+public ApiSelectorBuilder apis(Predicate<RequestHandler> selector) {
+     this.requestHandlerSelector = Predicates.and(this.requestHandlerSelector, selector);
+     return this;
+ }
+
+ public ApiSelectorBuilder paths(Predicate<String> selector) {
+     this.pathSelector = Predicates.and(this.pathSelector, selector);
+     return this;
+ }
+...}
+```
+
+- package 扫描控制
+
+```
+xxx.apis(Predicates.or(new Predicate[]{RequestHandlerSelectors.basePackage("com.hikvision.isfd.privilege.api"), RequestHandlerSelectors.basePackage("com.hikvision.isfd.user.api"), RequestHandlerSelectors.basePackage("com.hikvision.isfd.userauth.api")}))
+```
+- paths 扫描控制
+
+```
+/**正则*/
+xx.paths(PathSelectors.ant("/api/v**/**"))
+/**多正则匹配*/
+xx.paths(pathsRex());
+...
+private Predicate<String> pathsRex() {
+    return or(
+            regex("/user.*"),
+            regex("/api.*")
+    );
+}
+/**多正则匹配[简写]*/
+xx.paths(Predicates.or(new Predicate[]{PathSelectors.regex("/api/v1/**"),PathSelectors.regex("/api/v2/**")}))
+```
+
 > 注解说明
 
     @ApiModel 表明这是一个被swagger框架管理的model，用于实体类上
@@ -289,12 +360,10 @@ public class SwaggerConfiguration {
     @ApiParam(value="...",name="...",type="int") 方法中调用的参数描述，紧邻参数，默认body application/json，可以通过加@RequestParam("...")Integer ... 来指定参数类型
 
 
-
-
 [Swagger注解](https://huawei-servicecomb.gitbooks.io/developerguide/content/build-provider/swagger-annotation.html) 
 
-```java
 
+```java
 /*入参*/
 @ApiModel(description = "用户请求表单")
 public class UserForm {
@@ -340,7 +409,6 @@ private static final Logger LOGGER = LoggerFactory.getLogger(TestController.clas
         > Controller继承接口API,在API中利用 swagger标签进行描述
 
 ```java
-
 @Api(value = "User控制器")
 public interface UserActionAPI {
 
@@ -348,7 +416,7 @@ public interface UserActionAPI {
     @ApiResponse(code = 200, message = "success", response = RespMapJson.class)
     @ApiImplicitParams({
             @ApiImplicitParam(value="用户Id",defaultValue="1",name="userId",required=true,paramType="query",dataType="int")})
-    RespMapJson test(@ApiParam(name = "userId", required = true, value = "用户Id") @RequestParam("userId") int userId);
+    RespMapJson test(@RequestParam("userId") int userId);
 }
 
 @RestController
@@ -390,19 +458,381 @@ public class UserController implements UserActionAPI {
 ![输入图片说明](https://gitee.com/uploads/images/2018/0415/214757_d146cb9f_912956.png "201804152148.png")
 
 
+## 打包时剔除springfox-swagger相关jar包
+
+针对于利用swagger.json生成接口pdf和html,有类似于EasyMock的接口管理平台。
+
+> maven
+
+- `parent-pom`
+
+```
+
+<!-- swagger begin -->
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.8.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.8.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>io.swagger</groupId>
+    <artifactId>swagger-models</artifactId>
+    <version>1.5.14</version>
+</dependency>
+<!-- swagger end -->
+
+```
+
+- `module-pom`
+
+```
+
+ <parent>
+        <artifactId>demo</artifactId>
+        <groupId>com.example.demo</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+ </parent>
+
+ ...
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+</dependency>
+
+<dependency>
+    <groupId>io.swagger</groupId>
+    <artifactId>swagger-models</artifactId>
+</dependency>
+
+```
+
+在parent pom中，springfox的scope设置为provided，swagger的依赖是需要打进运行包的。Springfox以及其依赖的jar都不会打进包中。
+
+    1.provided是没有传递性的，也就是说，如果你依赖的某个jar包，它的某个jar的范围是provided，那么该jar不会在你的工程中依靠jar依赖传递加入到你的工程中。
+    2.provided具有继承性，上面的情况，如果需要统一配置一个组织的通用的provided依赖，可以使用parent，然后在所有工程中继承
+    3.maven的scope决定依赖的包是否加入本工程的classpath下
+
+
+| 依赖范围(Scope)	| 编译classpath	| 测试classpath | 运行时classpath | 传递性	|
+| :-------- | :----: | :--: | :----:| :--: | :----:|
+|compile	| Y	| Y	| Y	| Y	|
+|test	    | -	| Y	| - | - |
+|provided   | Y	| Y	| - | -	|
+|runtime    | - | Y | Y	| Y	|
+|system	    | Y | Y | -	| Y	|
+
+
+<font color="red">关于swagger.json的编译期生成方案：2018-06-27-maven-surefire-plugin.md</font>    
+
 ## 文档生成
 
-    1、web.xml需要添加swagger的servlet然后做url mapping，不然swagger-ui.html和/v2/api-docs显示不出来。
-    2、swagger的配置文件要加一个swagger config的bean。
-    3、swagger config类是做定制化显示用的。例如版本号，作者信息等等。通过实现多个Docket可以输出多条api路径信息和接口文档。
-    4、使用springfox-staticdocs可实现输出静态api文档。但是有个坑，默认编码并非utf-8，中文会乱码。只好自己实现一个Swagger2MarkupResultHandler，在里面指定编码格式。已提pr，不知他们接不接受。
+> 利用asciidoctor插件生成 html 和 pdf 接口文档
+
+[文档生成方式和asciidoctorj生成的pdf文件中文显示不全问题解决方案](https://blog.csdn.net/qq_25215821/article/details/79175535)
+
+处理思路：
+
+- 利用winRAR打开jar包并替换修改后文件
+- 下载支持中文的字体文件
+- 修改字体配置
+- 添加字体xx.ttf文件
+- 替换maven或gradle的jar包
+
+`字体目录` asciidoctorj-pdf-1.5.0-alpha.10.1.jar\gems\asciidoctor-pdf-1.5.0.alpha.10\data\fonts
+
+`字体配置文件` asciidoctorj-pdf-1.5.0-alpha.10.1.jar\gems\asciidoctor-pdf-1.5.0.alpha.10\data\themes
+
+[支持中文的asciidoctor-pdf-1.5.0.alpha.10.jar](https://drive.google.com/open?id=1xif0DZkx5ofyWf-Ky2YmBVbBe4GW1toc)
+
+> SpringBoot Gradle搭建文件生成插件
+
+`gradle插件配置`
+
+```
+buildscript {
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.3'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.10.1'
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'io.github.swagger2markup:swagger2markup-spring-restdocs-ext:1.2.0'
+        classpath 'io.github.swagger2markup:swagger2markup-gradle-plugin:1.2.0'
+        classpath "org.ajoberstar:gradle-git:1.5.1"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'io.github.swagger2markup'
+apply plugin: 'org.asciidoctor.convert'
+apply plugin: 'org.ajoberstar.github-pages'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+    mavenLocal()
+}
+
+ext {
+    restPetsVersion="v1"
+    restUserVersion="v1"
+    asciiDocOutputDir = file("${buildDir}/asciidoc/generated")
+    swaggerOutputDir = file("${buildDir}/swagger")
+    swaggerJsonUris = "/v2/api-docs?group=PETS,/v2/api-docs?group=USER"
+    swaggerJsonOutputNames = "swagger-pets-${restUserVersion}.json,swagger-user-${restPetsVersion}.json"
+    snippetsOutputDir = file("${buildDir}/asciidoc/snippets")
+    springfoxVersion = '2.5.0'
+}
+
+dependencies {
+    compileOnly('org.projectlombok:lombok')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'io.swagger:swagger-annotations:1.5.6'
+    compile 'com.google.guava:guava:18.0'
+    compile 'net.logstash.logback:logstash-logback-encoder:4.5.1'
+    compile("com.fasterxml.jackson.dataformat:jackson-dataformat-smile:2.6.5")
+    compile("com.fasterxml.jackson.module:jackson-module-afterburner:2.6.5")
+
+    testCompile "io.springfox:springfox-swagger2:${springfoxVersion}"
+    testCompile "io.springfox:springfox-bean-validators:${springfoxVersion}"
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'junit:junit'
+    testCompile 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    testCompile 'com.fasterxml.jackson.module:jackson-module-jsonSchema:2.6.5'
+}
+
+
+
+test {
+    systemProperty 'rest.user.version', "v1"
+    systemProperty 'rest.pets.version', "v1"
+    systemProperty 'io.springfox.staticdocs.outputDir', swaggerOutputDir
+    systemProperty 'io.springfox.staticdocs.snippetsOutputDir', snippetsOutputDir
+    systemProperty 'io.swagger.json.uris', swaggerJsonUris
+    systemProperty 'io.swagger.json.output.name', swaggerJsonOutputNames
+}
+
+task showProperties << {
+    println asciiDocOutputDir
+    println swaggerOutputDir
+}
+
+
+convertSwagger2markup {
+    dependsOn test
+    swaggerInput "${swaggerOutputDir}/swagger.json"
+    outputDir asciiDocOutputDir
+    config = [
+            'swagger2markup.pathsGroupedBy' : 'TAGS',
+            'swagger2markup.extensions.springRestDocs.snippetBaseUri': snippetsOutputDir.getAbsolutePath()]
+}
+
+asciidoctor {
+    dependsOn convertSwagger2markup
+    sources {
+        include 'index.adoc'
+    }
+    backends = ['html5', 'pdf']
+    attributes = [
+            doctype: 'book',
+            toc: 'left',
+            toclevels: '3',
+            numbered: '',
+            sectlinks: '',
+            sectanchors: '',
+            hardbreaks: '',
+            generated: asciiDocOutputDir
+    ]
+}
+
+jar {
+    dependsOn asciidoctor
+    from ("${asciidoctor.outputDir}/html5") {
+        into 'static/docs'
+    }
+    from ("${asciidoctor.outputDir}/pdf") {
+        into 'static/docs'
+    }
+}
+
+```
+
+`SwaggerConfig`:
+
+```
+package com.example.chapter2.config;
+
+import com.google.common.base.Predicates;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.schema.ModelRef;
+import springfox.documentation.service.*;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static java.util.Arrays.asList;
+import static springfox.documentation.builders.PathSelectors.ant;
+
+/**
+ * <p>
+ *
+ * </p>
+ *
+ * @author xiachaoyang 2018年06月28日 14:42
+ * @version V1.0
+ * @modificationHistory=========================逻辑或功能性重大变更记录
+ * @modify by user: {修改人} 2018年06月28日
+ * @modify by reason:{方法名}:{原因}
+ */
+@EnableSwagger2
+@Configuration
+@Import(BeanValidatorPluginsConfiguration.class)
+public class SwaggerConfig {
+    @Bean
+    public Docket petApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(petApiInfo())
+                .groupName("PETS")
+                .securitySchemes(asList(
+                        new OAuth(
+                                "petstore_auth",
+                                asList(new AuthorizationScope("write_pets", "modify pets in your account"),
+                                        new AuthorizationScope("read_pets", "read your pets")),
+                                Arrays.<GrantType>asList(new ImplicitGrant(new LoginEndpoint("http://petstore.swagger.io/api/oauth/dialog"), "tokenName"))
+                        ),
+                        new ApiKey("api_key", "api_key", "header")
+                ))
+                .select()
+                .paths(Predicates.and(ant("/pets/**"), Predicates.not(ant("/error")), Predicates.not(ant("/management/**")), Predicates.not(ant("/management*"))))
+                .build();
+    }
+
+    @Bean
+    public Docket userDocket() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .globalOperationParameters(setHeaderToken())
+                .apiInfo(userRestInfo())
+                .groupName("USER")
+                .select()
+                .paths(PathSelectors.ant("/user/**"))
+                .build();
+    }
+
+
+
+    @Bean
+    public Docket defaultDocket() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .globalOperationParameters(setHeaderToken())
+                .apiInfo(defaultRestInfo())
+                .groupName("DEFAULT")
+                .select()
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+
+    private ApiInfo defaultRestInfo() {
+        return new ApiInfoBuilder()
+                .title("Swagger DEFAULT")
+                .description("REST API Description")
+                .contact(new Contact("TestName", "http:/test-url.com", "test@test.de"))
+                .license("Apache 2.0")
+                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .version("1.0.0")
+                .build();
+    }
+
+
+    private List<Parameter> setHeaderToken() {
+        ParameterBuilder token = new ParameterBuilder();
+        List<Parameter> parameterList = new ArrayList<>();
+        token.name("Token")
+                .description("校验 token")
+                .modelRef(new ModelRef("String"))
+                .parameterType("header")
+                .required(true)
+                .defaultValue("token1234");
+        parameterList.add(token.build());
+        return parameterList;
+    }
+
+    private ApiInfo userRestInfo() {
+        return new ApiInfoBuilder()
+                .title("Swagger User")
+                .description("User API Description")
+                .contact(new Contact("TestName", "http:/test-url.com", "test@test.de"))
+                .license("Apache 2.0")
+                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .version("1.0.0")
+                .build();
+    }
+
+    private ApiInfo petApiInfo() {
+        return new ApiInfoBuilder()
+                .title("Swagger Petstore")
+                .description("Petstore API Description")
+                .contact(new Contact("TestName", "http:/test-url.com", "test@test.de"))
+                .license("Apache 2.0")
+                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .version("1.0.0")
+                .build();
+    }
+}
+
+```
 
 
 ## 前端对接
 
+> 接口共享
 
+- 提供swagger.json 文档,利用`EasyMock`手动上传接口文件内实现REST-API管理
 
+- swagger文档通过test测试用例生成(打包时不跳过生成swagger的测试用例)
 
+- jenkins自动部署，定时拉取svn/git仓库的项目代码，通过脚本代码执行mvn命令生成swagger文件，放到指定目录
+
+- 开发接口文件解析服务，分析接口变更并通知对应接口关注人。
 
 ## REFRENCE
 
