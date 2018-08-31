@@ -6,8 +6,11 @@ categories:
 tags:
 - guava
 ---
+
 任何对JDK集合框架有经验的程序员,都熟悉和喜欢java.util.Collections包含的工具方法。Guava沿着这些路线提供了更多的工具方法：适用于所有集合的静态方法。这是Guava最流行和成熟的部分原因之一。
+
 ---
+
 # Google Guava 集合工具类
 
 ## Guava中的集合方法扩展
