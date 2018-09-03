@@ -239,24 +239,25 @@ public void testGuavaFluentIterable(){
 
 > 静态工厂方法
 
-| 名称         | 方法(根据入参类型不同区分)                                                                                          |
+| 名称         | 方法(根据入参类型不同区分)                                                                              |
 | :--------- | :------------------------------------------------------------------------------------------ |
 | ArrayList  | basic, with elements, from Iterable, from Iterator, with exact capacity, with expected size |
 | LinkedList | basic, from Iterable                                                                        |
 
 `>注:`
-  - `basic` : 无参构造器
-  - `with elements` : E... elements
-  - `from Iterable` : Iterable<? extends E> elements
-  - `from Iterator` : Iterator<? extends E> elements
-  - `with exact capacity` : int initialArraySize
-  - `with expected size` : int estimatedSize
+
+-   `basic` : 无参构造器
+-   `with elements` : E... elements
+-   `from Iterable` : Iterable&lt;? extends E> elements
+-   `from Iterator` : Iterator&lt;? extends E> elements
+-   `with exact capacity` : int initialArraySize
+-   `with expected size` : int estimatedSize
 
 > 除了静态工厂方法和函数式编程方法，Lists为List类型的对象提供了若干工具方法。
 
-| 方法                   | 描述                                                        |
-| :------------------- | :-------------------------------------------------------- |
-| partition(List, int) | 把List按指定大小分割                                              |
+| 方法                   | 描述                                                       |
+| :------------------- | :------------------------------------------------------- |
+| partition(List, int) | 把List按指定大小分割                                             |
 | reverse(List)        | 返回给定List的反转视图。注: 如果List是不可变的，考虑改用ImmutableList.reverse() |
 
 ```java
@@ -290,13 +291,306 @@ public void testGuavaFluentIterable(){
 }
 ```
 
+> `newArrayListWithCapacity` 和 `newArrayListWithExpectedSize` 对比
+
+下面的这个写法呢是在初始化list的时候，说明容器的扩容界限值。使用条件：你确定你的容器会装多少个，不确定就用一般形式的。说明：这个容器超过`10`个还是会自动扩容的。不用担心容量不够用。默认是分配一个容量为`10`的数组，不够将扩容。执行数组数据迁移操作：新建新数组，复制就数组数据到新数组（包括开辟新空间，copy数据等等，耗时，耗性能）。对数字 `10` 的说明：若直接new一个list的话，默认大小是`10`的数组，下面的方式则是 `5L + x + x/10 = 16L(x = 10)`，在`17`的时候扩容。整个来说的优点有：节约内存，节约时间，节约性能。代码质量提高(10为下方例子中的数字，可设置为其他数字)。
+
+```java
+List<String> list = Lists.newArrayListWithExpectedSize(10);
+```
+
+`Lists.newArrayListWithExpectedSize(10)源码`
+
+```java
+//静态工厂方法
+@GwtCompatible(serializable = true)
+public static <E> ArrayList<E> newArrayListWithExpectedSize(int estimatedSize) {
+  return new ArrayList<>(computeArrayListCapacity(estimatedSize));
+}
+//计算容量
+@VisibleForTesting
+static int computeArrayListCapacity(int arraySize) {
+  checkNonnegative(arraySize, "arraySize");
+
+  // TODO(kevinb): Figure out the right behavior, and document it
+  return Ints.saturatedCast(5L + arraySize + (arraySize / 10));
+}
+//校验非负数
+@CanIgnoreReturnValue
+static int checkNonnegative(int value, String name) {
+  if (value < 0) {
+    throw new IllegalArgumentException(name + " cannot be negative but was: " + value);
+  }
+  return value;
+}
+//容量大小范围控制
+public static int saturatedCast(long value) {
+    if (value > Integer.MAX_VALUE) {
+      return Integer.MAX_VALUE;
+    }
+    if (value < Integer.MIN_VALUE) {
+      return Integer.MIN_VALUE;
+    }
+    return (int) value;
+  }
+```
+
+这个方法就是直接返回一个10的数组。
+
+```java
+List<String> list_ = Lists.newArrayListWithCapacity(10);
+```
+
+`Lists.newArrayListWithCapacity(10)源码`
+
+```java
+//静态工厂方法
+@GwtCompatible(serializable = true)
+public static <E> ArrayList<E> newArrayListWithCapacity(int initialArraySize) {
+  checkNonnegative(initialArraySize, "initialArraySize"); // for GWT.
+  return new ArrayList<>(initialArraySize);
+}
+```
+
+`ArrayList源码里面的add方法以及如何扩容`
+
+```java
+public boolean add(E e) {
+     ensureCapacityInternal(size + 1);  // Increments modCount!! (Increments 翻译-- 增量; 增长( increment的名词复数 ); 增额; 定期的加薪;)
+     elementData[size++] = e;
+     return true;
+}
+
+private void ensureCapacityInternal(int minCapacity) {// Internal 翻译--  内部的; 国内的; 体内的; 内心的;   Capacity  翻译--  容量; 性能; 才能; 生产能力;
+     ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
+}
+
+private void ensureExplicitCapacity(int minCapacity) {//Explicit  翻译-- 明确的，清楚的; 直言的; 详述的; 不隐瞒的;
+    modCount++;
+    // overflow-conscious code
+    if (minCapacity - elementData.length > 0)// 扩容条件，就是minCapacity = size + 1 大于当前数组的长度。就扩容.
+        grow(minCapacity);
+}
+
+private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
+
+private void grow(int minCapacity) {
+     // overflow-conscious code
+     int oldCapacity = elementData.length;
+     int newCapacity = oldCapacity + (oldCapacity >> 1);//新容量相当于是原来容量的1.5倍(old + old>>1右移一位即除以2)
+     if (newCapacity - minCapacity < 0)
+         newCapacity = minCapacity;
+     if (newCapacity - MAX_ARRAY_SIZE > 0)
+         newCapacity = hugeCapacity(minCapacity);
+     // minCapacity is usually close to size, so this is a win:
+     elementData = Arrays.copyOf(elementData, newCapacity);// 复制旧数组数据到新数组
+ }
+```
+
+`ArrayList 的 modCount 属性`
+
+```java
+/**
+  * The number of times（...的次数） this list has been <i>structurally modified（结构修改）</i>.
+  * Structural modifications(结构修改) are those that change the size of the
+  * list, or otherwise（其他） perturb（使混乱） it in such a fashion（以这样的方式） that iterations（迭代） in
+  * progress（过程，流程） may yield（产生） incorrect results（不正确的结果）.
+  *
+  * <p>This field（字段，成员变量，域） is used by the iterator and list iterator implementation
+  * returned by the {@code iterator} and {@code listIterator} methods.
+  * If the value of this field changes unexpectedly（非预期的，意外的）, the iterator (or list
+  * iterator) will throw a {@code ConcurrentModificationException} in
+  * response to the {@code next}, {@code remove}, {@code previous},
+  * {@code set} or {@code add} operations.  This provides
+  * <i>fail-fast</i> behavior, rather than（而不是） non-deterministic behavior（非确定的行为） in
+  * the face of（在面对...时）concurrent modification（并发性的修改） during iteration（在迭代过程中）.
+  *
+  * <p><b>Use of this field by subclasses（子类们） is optional（可选的）.</b> If a subclass
+  * wishes to provide fail-fast iterators（希望提供快速失败的迭代器） (and list iterators), then it
+  * merely（仅仅） has to increment this field in its {@code add(int, E)} and
+  * {@code remove(int)} methods (and any other methods that it overrides
+  * that result in structural modifications to the list).  A single call（一个单一的调用） to
+  * {@code add(int, E)} or {@code remove(int)} must add no more than（不超过）
+  * one to this field, or the iterators (and list iterators) will throw
+  * bogus {@code ConcurrentModificationExceptions}.  If an implementation
+  * does not wish to provide fail-fast iterators, this field may be
+  * ignored（忽略）.
+  */
+ protected transient int modCount = 0;
+```
+
+## Sets
+
+> Sets工具类包含了若干好用的方法,它提供了很多标准的集合运算（Set-Theoretic）方法，这些方法接受Set参数并返回SetView，可用于：直接当作Set使用，因为SetView也实现了Set接口；用`copyInto(Set)`拷贝进另一个可变集合；用`immutableCopy()`对自己做不可变拷贝。
+
+| 方法                           | 描述              |
+| :--------------------------- | :-------------- |
+| union(Set, Set)              | ANB             |
+| intersection(Set, Set)       | ANB             |
+| difference(Set, Set)         | AN(!B)          |
+| symmetricDifference(Set,Set) | (AUB)&(!(ANB))  |
+| newCopyOnWriteArraySet(Set)  | 返回一个复制所有元素的集合对象 |
+| cartesianProduct(List<Set>)  | 返回所有集合的笛卡儿积     |
+| powerSet(Set)                | 返回给定集合的所有子集     |
+
+`>注`:
+
+-   `N`:数学集合操作中的"交集";
+-   `U`:数学集合操作中的"并集";
+-   `!`:非，表示不在此集合中
+
+```java
+/**
+  *  Sets 方法测试
+  */
+ @Test
+ public void testSets(){
+     HashSet<Integer> iSets = Sets.newHashSet(1, 2, 3, 4);
+     HashSet<Integer> iSets2 = Sets.newHashSet(4, 5, 6, 7);
+     System.out.println(Sets.union(iSets,iSets2));//[1, 2, 3, 4, 5, 6, 7]
+     System.out.println(Sets.intersection(iSets,iSets2));//[4]
+     System.out.println(Sets.difference(iSets,iSets2));//[1, 2, 3]
+     System.out.println(Sets.symmetricDifference(iSets,iSets2));//[1, 2, 3, 5, 6, 7]
+     System.out.println(Sets.newCopyOnWriteArraySet(iSets));//[1, 2, 3, 4]
+     System.out.println(iSets.equals(Sets.newCopyOnWriteArraySet(iSets)));//true
+     System.out.println(Sets.cartesianProduct(iSets,iSets2));//[[1, 4], [1, 5], [1, 6], [1, 7], [2, 4], [2, 5], [2, 6], [2, 7], [3, 4], [3, 5], [3, 6], [3, 7], [4, 4], [4, 5], [4, 6], [4, 7]]
+     System.out.println(Sets.cartesianProduct(iSets));//[[1], [2], [3], [4]]
+     System.out.println(Sets.powerSet(iSets));//powerSet({1=0, 2=1, 3=2, 4=3})
+     HashSet<Person> pSets = Sets.newHashSet(new Person("p1"),new Person("p2"),new Person("p3"));
+     System.out.println(Sets.powerSet(pSets));//powerSet({Person(name=p1)=0, Person(name=p2)=1, Person(name=p3)=2})
+     Set<String> sSets = ImmutableSet.of("one", "two", "three", "six", "seven", "eight");
+     Set<String> sSets2 = ImmutableSet.of("two", "three", "five", "seven");
+     Set<String> sSets3 = Sets.newCopyOnWriteArraySet(sSets);
+     Sets.SetView<String> setView = Sets.intersection(sSets,sSets2);
+     System.out.println(setView);//[two, three, seven]
+     System.out.println(setView.immutableCopy());//[two, three, seven] 可以使用交集，但不可变拷贝的读取效率更高
+     System.out.println(sSets3);//[one, two, three, six, seven, eight]
+     System.out.println(setView.copyInto(sSets));//java.lang.UnsupportedOperationException
+ }
+```
+
+> 静态工厂方法
+
+| 类型            | 工厂方法                                                                   |
+| :------------ | :--------------------------------------------------------------------- |
+| HashSet       | basic, with elements, from Iterable, with expected size, from Iterator |
+| LinkedHashSet | basic, from Iterable, with expected size                               |
+| TreeSet       | basic, with Comparator, from Iterable                                  |
+
+`>注:`
+
+-   `basic` : 无参构造器
+-   `with elements` : E... elements
+-   `from Iterable` : Iterable&lt;? extends E> elements
+-   `from Iterator` : Iterator&lt;? extends E> elements
+-   `with expected size` : int expectedSize
+
+## Maps
+
+| 方法                                  | 描述                                                               |
+| :---------------------------------- | :--------------------------------------------------------------- |
+| Maps.uniqueIndex(Iterable,Function) | 方法返回一个Map，键为Function返回的属性值，值为Iterable中相应的元素，因此我们可以反复用这个Map进行查找操作 |
+| Maps.difference(Map, Map)           | 用来比较两个Map以获取所有不同点。该方法返回MapDifference对象，把不同点的维恩图分解成键值对            |
+
+`维恩图分解`
+
+| 方法                   | 描述                                                                |
+| :------------------- | :---------------------------------------------------------------- |
+| entriesInCommon()    | 两个Map中都有的映射项，包括匹配的键与值                                             |
+| entriesDiffering()   | 键相同但是值不同值映射项。返回的Map的值类型为MapDifference.ValueDifference，以表示左右两个不同的值 |
+| entriesOnlyOnLeft()  | 键只存在于左边Map的映射项                                                    |
+| entriesOnlyOnRight() | 键只存在于右边Map的映射项                                                    |
+
+```java
+/**
+ * Maps 方法测试
+ */
+@Test
+public void testMaps(){
+    //我们有一堆字符串，这些字符串的长度都是独一无二的，而我们希望能够按照特定长度查找字符串
+    List<String> strs = Lists.newArrayList("a","ab","abc");
+    ImmutableMap<Integer, String> sMap = Maps.uniqueIndex(strs,(p)->p.length());
+    System.out.println(sMap);//{1=a, 2=ab, 3=abc}
+    strs.add("x");
+    //sMap = Maps.uniqueIndex(strs,(p)->p.length());//java.lang.IllegalArgumentException: Multiple entries with same key: 1=x and 1=a. To index multiple values under a key, use Multimaps.index.
+    System.out.println(sMap);
+    //用来比较两个Map以获取所有不同点。该方法返回MapDifference对象，把不同点的维恩图分解不同键值对：
+    Map<String, Integer> left = ImmutableMap.of("a", 1, "b", 2, "c", 3);
+    Map<String, Integer> right = ImmutableMap.of("a", 1, "b", 2, "c", 3);
+    MapDifference<String, Integer> diff = Maps.difference(left, right);
+    System.out.println(diff);//equal
+    Map<String, Integer> right2 = ImmutableMap.of("a", 1, "b", 3, "d", 4);
+    MapDifference<String, Integer> diff2 = Maps.difference(left, right2);
+    System.out.println(diff2);//not equal: only on left={c=3}: only on right={d=4}: value differences={b=(2, 3)}
+    System.out.println(diff2.entriesInCommon());//{a=1, b=2}
+    System.out.println(diff2.entriesDiffering());//{b=(2, 3)}
+    System.out.println(diff2.entriesOnlyOnLeft());//{c=3}
+    System.out.println(diff2.entriesOnlyOnRight());//{d=4}
+}
+```
+
+> 处理 BiMap 的工具方法（BiMap也是一种Map实现）
+
+| BiMap工具方法                | 相应的Map工具方法                       |
+| :----------------------- | :------------------------------- |
+| synchronizedBiMap(BiMap) | Collections.synchronizedMap(Map) |
+| unmodifiableBiMap(BiMap) | Collections.unmodifiableMap(Map) |
+
+```java
+//和一个key可以用多个value一样，map还有一种方式可以使一个value对应一个key，这就是Bimap. BiMap中value的值是唯一的。
+BiMap<String,Person> pMap = HashBiMap.create(10);
+pMap.put("a",new Person("Pa"));
+pMap.put("b",new Person("Pb"));
+//pMap.put("c",new Person("Pa"));//java.lang.IllegalArgumentException: value already present: Person(name=Pa)
+BiMap<String, Person> pMap2 = Maps.synchronizedBiMap(pMap);
+System.out.println(pMap2);//{a=Person(name=Pa), b=Person(name=Pb)}
+```
+
+> 静态工厂方法
+
+| 类型              | 工厂方法                                   |
+| :-------------- | :------------------------------------- |
+| HashMap         | basic, from Map, with expected size    |
+| LinkedHashMap   | basic, from Map                        |
+| TreeMap         | basic, from Comparator, from SortedMap |
+| EnumMap         | from Class, from Map                   |
+| ConcurrentMap   | basic                                  |
+| IdentityHashMap | basic                                  |
+
+## Multisets
+
+> 标准的Collection操作会忽略Multiset重复元素的个数，而只关心元素是否存在于Multiset中，如containsAll方法。为此，Multisets提供了若干方法，以顾及Multiset元素的重复性：
+
+
+`相似方法`
+
+| 方法                                                          | 说明                                                              | 和Collection方法的区别                                |
+| :---------------------------------------------------------- | :-------------------------------------------------------------- | :---------------------------------------------- |
+| containsOccurrences(Multiset   sup, Multiset sub)           | 对任意o，如果sub.count(o)&lt;=super.count(o)，返回true                   | Collection.containsAll忽略个数，而只关心sub的元素是否都在super中 |
+| removeOccurrences(Multiset   removeFrom, Multiset toRemove) | 对toRemove中的重复元素，仅在removeFrom中删除相同个数。                            | Collection.removeAll移除所有出现在toRemove的元素          |
+| retainOccurrences(Multiset   removeFrom, Multiset toRetain) | 修改removeFrom，以保证任意o都符合removeFrom.count(o)&lt;=toRetain.count(o) | Collection.retainAll保留所有出现在toRetain的元素          |
+
+`其他方法`
+
+| 方法                                         | 说明                                 |
+| :----------------------------------------- | :--------------------------------- |
+| intersection(Multiset,   Multiset)         | 返回两个multiset的交集;                   |
+| copyHighestCountFirst(Multiset)            | 返回Multiset的不可变拷贝，并将元素按重复出现的次数做降序排列 |
+| unmodifiableMultiset(Multiset)             | 返回Multiset的只读视图                    |
+| unmodifiableSortedMultiset(SortedMultiset) | 返回SortedMultiset的只视图               |
+
+## Multimaps
+
+## Tables
+
 ## REFRENCES
 
 1.  [\[Google Guava\] 2.3-强大的集合工具类：java.util.Collections中未包含的集合工具](http://ifeve.com/google-guava-collectionutilities/)
 2.  [Guava学习笔记：Immutable(不可变)集合](http://www.cnblogs.com/peida/p/Guava_ImmutableCollections.html)
 3.  [guava翻译系列之Collections](https://yq.aliyun.com/articles/71082)
 4.  [Java8：Lambda表达式增强版Comparator和排序](http://www.importnew.com/15259.html)
-5. [guava之Lists常用示例及newArrayListWithExpectedSize()和newArrayListWithCapacity()详细对比](https://blog.csdn.net/qq_27093465/article/details/53116390)
+5.  [guava之Lists常用示例及newArrayListWithExpectedSize()和newArrayListWithCapacity()详细对比](https://blog.csdn.net/qq_27093465/article/details/53116390)
+
 
 ## 微信公众号
 
