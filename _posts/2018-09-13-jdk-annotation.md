@@ -4,8 +4,8 @@ date: 2018-09-13 23:22:00
 categories:
 - JDK
 tags:
-- clone
-- Cloneable
+- annotation
+- validate
 ---
 
 JDK 通过annotation实现注解进行参数校验
@@ -358,3 +358,9 @@ public class ValidationTest {
 2. [java自定义注解实现前后台参数校验](http://www.cnblogs.com/softidea/p/5709397.html)
 3. [一小时搞明白自定义注解（Annotation）](https://blog.csdn.net/u013045971/article/details/53433874)
 4. [springboot~为Money类型添加最大值和最小值的注解校验](https://www.cnblogs.com/lori/p/9021681.html)
+
+## 微信公众号
+
+<center>
+<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
+</center>
