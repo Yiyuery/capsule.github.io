@@ -1,5 +1,5 @@
 ---
-title: JJDK 之 自定义注解 Annotation
+title: JDK 之 自定义注解 Annotation
 date: 2018-09-13 23:22:00
 categories:
 - JDK
