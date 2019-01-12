@@ -50,9 +50,9 @@ compile 'org.springframework.boot:spring-boot-starter-data-ldap'
 # LDAP连接配置
 spring:
   ldap:
-    urls: ldap://10.33.47.7:7003
-    base: dc=platform,dc=hikvision,dc=com
-    username: ou=acs,ou=componentaccounts,dc=platform,dc=hikvision,dc=com
+    urls: ldap://x.x.x.x:7003
+    base: dc=platform,dc=xxx,dc=com
+    username: ou=acs,ou=componentaccounts,dc=platform,dc=xxx,dc=com
     password: UlAwRkYl
 
 ```
@@ -289,8 +289,8 @@ public class PersonRepoImpl implements IPersonRepo {
     public List<String> getAllPersonNamesWithTraditionalWay() {
         Hashtable env = new Hashtable();
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
-        env.put(Context.PROVIDER_URL, "ldap://10.33.47.7:7003/dc=platform,dc=hikvision,dc=com");
-        env.put(Context.SECURITY_PRINCIPAL, "ou=acs,ou=componentaccounts,dc=platform,dc=hikvision,dc=com");
+        env.put(Context.PROVIDER_URL, "ldap://x.x.x.x:7003/dc=platform,dc=xxx,dc=com");
+        env.put(Context.SECURITY_PRINCIPAL, "ou=acs,ou=componentaccounts,dc=platform,dc=xxx,dc=com");
         env.put(Context.SECURITY_CREDENTIALS, "UlAwRkYl");
         DirContext ctx;
         try {
@@ -499,7 +499,7 @@ public class LdapTest {
         //Person(personId=null, personName=fengzi_0917_104, orgId=14ed2744-fbd4-4868-8ebc-6b0b94d5ae60, sex=null, mobile=null, email=null, jobNo=null, studentId=null, certType=null, certNo=null, createTime=null, updateTime=null, status=null, disOrder=null, company=null)
 
         //根据dn查询
-        System.out.println(personRepo.findPersonWithDn("ou=person,dc=coreservice,dc=platform,dc=hikvision,dc=com").toString());
+        System.out.println(personRepo.findPersonWithDn("ou=person,dc=coreservice,dc=platform,dc=xxx,dc=com").toString());
 
         //根据组织ID查询人员
         //personRepo.getPersonNamesByOrgId("14ed2744-fbd4-4868-8ebc-6b0b94d5ae60").forEach(System.out::println);

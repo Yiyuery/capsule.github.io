@@ -29,7 +29,7 @@ JDK 通过annotation实现注解进行参数校验
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
  */
-package com.hikvision.cms.acs.common.web.validate;
+package com.xxx.cms.xxx.common.web.validate;
 
 import java.lang.annotation.*;
 
@@ -84,10 +84,10 @@ public @interface Validation {
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
  */
-package com.hikvision.cms.acs.common.web.validate;
+package com.xxx.cms.xxx.common.web.validate;
 
-import com.hikvision.cms.acs.common.constant.ConstParamHttpErrorCode;
-import com.hikvision.cms.acs.common.exception.ApiException;
+import com.xxx.cms.xxx.common.constant.ConstParamHttpErrorCode;
+import com.xxx.cms.xxx.common.exception.ApiException;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -169,10 +169,10 @@ public class Validator<T> {
                 }
             }
             if(!flag){
-                throw new ApiException(ConstParamHttpErrorCode.ACS_API_PARAM_RANGE_ERROR,String.format("Param '%s' is exceed max length[%d]!",field.getName(),v.maxLength()));
+                throw new ApiException(ConstParamHttpErrorCode.xxx_API_PARAM_RANGE_ERROR,String.format("Param '%s' is exceed max length[%d]!",field.getName(),v.maxLength()));
             }
         }catch (IllegalAccessException e) {
-            throw new ApiException(ConstParamHttpErrorCode.ACS_HTTP_SYS_INNER_EXCEPTION_ERROR,"Other error.");
+            throw new ApiException(ConstParamHttpErrorCode.xxx_HTTP_SYS_INNER_EXCEPTION_ERROR,"Other error.");
         }
     }
 
@@ -200,10 +200,10 @@ public class Validator<T> {
                 }
             }
             if(!flag){
-                throw new ApiException(ConstParamHttpErrorCode.ACS_API_PARAM_RANGE_ERROR,String.format("Param '%s' is out of range or illegal range configuration [%d,%d]!",field.getName(),v.allowRange()[0],v.allowRange()[1]));
+                throw new ApiException(ConstParamHttpErrorCode.xxx_API_PARAM_RANGE_ERROR,String.format("Param '%s' is out of range or illegal range configuration [%d,%d]!",field.getName(),v.allowRange()[0],v.allowRange()[1]));
             }
         }catch (IllegalAccessException e) {
-            throw new ApiException(ConstParamHttpErrorCode.ACS_HTTP_SYS_INNER_EXCEPTION_ERROR,"Other error.");
+            throw new ApiException(ConstParamHttpErrorCode.xxx_HTTP_SYS_INNER_EXCEPTION_ERROR,"Other error.");
         }
     }
 
@@ -216,7 +216,7 @@ public class Validator<T> {
             Object val = field.get(this);
             boolean flag = true;
             if(val == null){
-                throw new ApiException(ConstParamHttpErrorCode.ACS_HTTP_PARAM_VALIDATE_EMPTY_ERROR,String.format("Param '%s' is blank,but required!",field.getName()));
+                throw new ApiException(ConstParamHttpErrorCode.xxx_HTTP_PARAM_VALIDATE_EMPTY_ERROR,String.format("Param '%s' is blank,but required!",field.getName()));
             }
             if(val instanceof String){
                 if(StringUtils.isEmpty(String.valueOf(val)) || String.valueOf(val).toLowerCase().equals("null")){
@@ -234,10 +234,10 @@ public class Validator<T> {
                 }
             }
             if(!flag){
-                throw new ApiException(ConstParamHttpErrorCode.ACS_HTTP_PARAM_VALIDATE_EMPTY_ERROR,String.format("Param '%s' is blank,but required!",field.getName()));
+                throw new ApiException(ConstParamHttpErrorCode.xxx_HTTP_PARAM_VALIDATE_EMPTY_ERROR,String.format("Param '%s' is blank,but required!",field.getName()));
             }
         } catch (IllegalAccessException e) {
-            throw new ApiException(ConstParamHttpErrorCode.ACS_HTTP_SYS_INNER_EXCEPTION_ERROR,"Other error.");
+            throw new ApiException(ConstParamHttpErrorCode.xxx_HTTP_SYS_INNER_EXCEPTION_ERROR,"Other error.");
         }
     }
 }
