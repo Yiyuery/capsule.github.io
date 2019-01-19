@@ -1,12 +1,10 @@
 ---
-title: [Spring] Spring探秘之线程池技术(一）
-date: 2019-01-18 21:22:00
+title: [Spring] Spring探秘之线程池技术(一)
+date: 2019-01-17 21:23:00
 categories:
-- spring-thread
-tags:
 - spring
+tags:
 - thread-pool-task-executor
-- blockqueue
 ---
 
   多线程和高并发场景，Spring 线程池技术 之  ThreadPoolTaskExecutor
