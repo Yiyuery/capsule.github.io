@@ -20,7 +20,7 @@ tags:
 
 > Links
 
-[>>>[JDK]Spring 探秘  之  线程池技术（二）](./2019-01-17-jdk-thread-pool-executor.md)
+[>>>[JDK]Spring 探秘  之  线程池技术（二）](http://xiazhaoyang.tech/jdk/2019/01/17/jdk-thread-pool-executor/)
 
 ## 使用场景
 
