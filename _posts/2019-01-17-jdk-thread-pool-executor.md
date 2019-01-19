@@ -2,12 +2,15 @@
 title: [JDK] Spring 探秘  之  线程池技术（二）
 date: 2019-01-17 21:22:00
 categories:
-- Spring Components
+- jdk
 tags:
-- spring
+- jdk
 - thread-pool-executor
 - blockqueue
-- jdk
+---
+
+  ThreadPoolExecutor 线程池配置 和 阻塞队列BlockingQueue
+
 ---
 
 # [JDK] Spring 探秘  之  线程池技术（二）
