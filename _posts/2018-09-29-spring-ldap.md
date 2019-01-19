@@ -52,7 +52,7 @@ spring:
   ldap:
     urls: ldap://x.x.x.x:7003
     base: dc=platform,dc=xxx,dc=com
-    username: ou=acs,ou=componentaccounts,dc=platform,dc=xxx,dc=com
+    username: ou=xxx,ou=componentaccounts,dc=platform,dc=xxx,dc=com
     password: UlAwRkYl
 
 ```
@@ -290,7 +290,7 @@ public class PersonRepoImpl implements IPersonRepo {
         Hashtable env = new Hashtable();
         env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
         env.put(Context.PROVIDER_URL, "ldap://x.x.x.x:7003/dc=platform,dc=xxx,dc=com");
-        env.put(Context.SECURITY_PRINCIPAL, "ou=acs,ou=componentaccounts,dc=platform,dc=xxx,dc=com");
+        env.put(Context.SECURITY_PRINCIPAL, "ou=xxx,ou=componentaccounts,dc=platform,dc=xxx,dc=com");
         env.put(Context.SECURITY_CREDENTIALS, "UlAwRkYl");
         DirContext ctx;
         try {

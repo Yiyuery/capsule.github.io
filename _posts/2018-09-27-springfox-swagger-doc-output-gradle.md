@@ -160,7 +160,7 @@ def getDate() {
 
 /**解析命令行参数：接口分组*/
 def getRestGroupName() {
-    return project.hasProperty('_rest') ? ext._rest : "acs-api-v1"
+    return project.hasProperty('_rest') ? ext._rest : "xxx-api-v1"
 }
 
 /**打包ZIP*/
@@ -197,9 +197,9 @@ task createStaticDoc {
 > gradle
 
 ```
-- gradle createStaticDoc -P_rest="acs-api-v1"
+- gradle createStaticDoc -P_rest="xxx-api-v1"
 
-- gradle createStaticDoc -P_rest="acs-ui-v1"
+- gradle createStaticDoc -P_rest="xxx-ui-v1"
 /**接口文档打包zip*/
 - gradle archiveReports
 
@@ -208,10 +208,10 @@ task createStaticDoc {
 > gradlew
 
 ```
-- ./gradlew createStaticDoc -P_rest="acs-api-v1"
-- ./gradlew copyStaticDoc -P_rest="acs-api-v1"
+- ./gradlew createStaticDoc -P_rest="xxx-api-v1"
+- ./gradlew copyStaticDoc -P_rest="xxx-api-v1"
 
-- ./gradlew createStaticDoc -P_rest="acs-ui-v1"
+- ./gradlew createStaticDoc -P_rest="xxx-ui-v1"
 - ./gradlew archiveReports
 ```
 

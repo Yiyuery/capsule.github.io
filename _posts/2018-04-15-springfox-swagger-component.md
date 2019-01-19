@@ -282,7 +282,7 @@ public Docket apiDocket() {
     .apiInfo(this.apiInfo())
     .tags(new Tag("权限接口", "菜单、区域、组织、资源等权限判断"), new Tag[]{new Tag("用户接口", "按条件查询用户、修改密码、获取加密参数"), new Tag("认证接口", "WEB登录、客户端登录、自动登录、获取验证码"), new Tag("数据迁移接口", "海燕数据迁移至海豚")})
     .select()
-    .apis(Predicates.or(new Predicate[]{RequestHandlerSelectors.basePackage("com.xxx.isfd.privilege.api"), RequestHandlerSelectors.basePackage("com.xxx.isfd.user.api"), RequestHandlerSelectors.basePackage("com.xxx.isfd.userauth.api")}))
+    .apis(Predicates.or(new Predicate[]{RequestHandlerSelectors.basePackage("com.xxx.xxx.privilege.api"), RequestHandlerSelectors.basePackage("com.xxx.xxx.user.api"), RequestHandlerSelectors.basePackage("com.xxx.xxx.userauth.api")}))
     .build();
 }
 
@@ -295,7 +295,7 @@ public Docket uiDocket() {
     .apiInfo(this.uiInfo())
     .tags(new Tag("用户接口", "用户添加、查询、修改、删除、导入导出等接口"), new Tag[]{new Tag("用户组接口", "用户组添加、修改、删除、查询等接口"), new Tag("用户实名人员信息获取接口", "获取人员组织相关的接口"), new Tag("AD域接口", "获取Windows域组织架构以及用户接口"), new Tag("角色相关接口", "添加角色、修改角色、删除角色、查询角色等相关接口"), new Tag("角色权限配置接口", "查询角色权限、查询资源类型、更新角色权限等相关接口")})
     .select()
-    .apis(Predicates.or(RequestHandlerSelectors.basePackage("com.xxx.isfd.privilege.role.action"), RequestHandlerSelectors.basePackage("com.xxx.isfd.user.action")))
+    .apis(Predicates.or(RequestHandlerSelectors.basePackage("com.xxx.xxx.privilege.role.action"), RequestHandlerSelectors.basePackage("com.xxx.xxx.user.action")))
     .build();
 }
 
@@ -321,7 +321,7 @@ public ApiSelectorBuilder apis(Predicate<RequestHandler> selector) {
 - package 扫描控制
 
 ```
-xxx.apis(Predicates.or(new Predicate[]{RequestHandlerSelectors.basePackage("com.xxx.isfd.privilege.api"), RequestHandlerSelectors.basePackage("com.xxx.isfd.user.api"), RequestHandlerSelectors.basePackage("com.xxx.isfd.userauth.api")}))
+xxx.apis(Predicates.or(new Predicate[]{RequestHandlerSelectors.basePackage("com.xxx.xxx.privilege.api"), RequestHandlerSelectors.basePackage("com.xxx.xxx.user.api"), RequestHandlerSelectors.basePackage("com.xxx.xxx.userauth.api")}))
 ```
 - paths 扫描控制
 
