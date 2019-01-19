@@ -13,6 +13,8 @@ tags:
 
 # [JDK] Spring 探秘  之  线程池技术（二）
 
+---
+
 > ThreadPoolExecutor 线程池配置 和 阻塞队列BlockingQueue
 
 ## 创建和配置

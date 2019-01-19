@@ -14,6 +14,8 @@ tags:
 
 # [Spring] Spring 探秘  之  线程池技术（一）
 
+---
+
 > 多线程和高并发场景，Spring 线程池技术 之  ThreadPoolTaskExecutor
 
 > [官方API](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/scheduling/concurrent/ThreadPoolTaskExecutor.html)
