@@ -1,5 +1,5 @@
 ---
-title: [Spring] Spring 探秘  之  线程池技术（一）
+title: [Spring] Spring探秘之线程池技术(一）
 date: 2019-01-18 21:22:00
 categories:
 - spring-thread
