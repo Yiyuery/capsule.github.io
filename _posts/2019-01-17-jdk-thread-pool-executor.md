@@ -1,5 +1,5 @@
 ---
-title: [JDK] Spring 探秘之线程池技术(二)
+title: Spring 探秘之线程池技术(二)
 date: 2019-01-17 21:22:00
 categories:
 - jdk
