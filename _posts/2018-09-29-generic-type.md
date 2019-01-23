@@ -205,7 +205,7 @@ System.out.println(boxList);
 - `public <T> void putFavorite(Class<T> type, T instance)` 对放入集合中的对象进行类型检查，检查失败编译器会报错。
 - Class内置方法cast会对对象引用进行动态转换
 
-## REFRENCES
+## REFERENCES
 1. [W3cSchool java泛型](https://www.w3cschool.cn/java/java-generics.html)
 2. [Reflection API](http://www.51gjie.com/java/792.html)
 

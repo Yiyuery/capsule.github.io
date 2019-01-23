@@ -481,7 +481,7 @@ Docker for Mac中在图形化终端上修改如下，填写后“Apply&Restart�
 
   配置后可以明显加快镜像拉取速度.
 
-## REFRENCES
+## REFERENCES
 
 1.  [Dockerfile构建镜像](https://blog.csdn.net/qinyushuang/article/details/43342553)
 2.  [Docker私有仓库搭建](https://www.jianshu.com/p/9cf9d1c8b00c)

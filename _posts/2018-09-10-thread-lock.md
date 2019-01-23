@@ -709,9 +709,9 @@ private void get2(Thread thread) {
 
 ## 锁优化
 
-> 参阅`REFRENCES-1`
+> 参阅`REFERENCES-1`
 
-## REFRENCES
+## REFERENCES
 
 1. [Java 多线程编程 — 锁优化](http://www.importnew.com/27935.html)
 2. [Lock和synchronized比较详解](http://www.cnblogs.com/dolphin0520/p/3923167.html)

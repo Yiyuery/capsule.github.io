@@ -323,7 +323,7 @@ git log --graph		以“图形”化的方式显示提交记录,可以很方便�
 
 > 备注：在Git操作中你不需要了解太多指令，只需要熟记项目中常用的指令即可，希望有兴趣的朋友，可以自己操作上手一下（可以搭建自己的项目）熟能生巧，读万卷书不如行万里路，谢谢！！！！
 
-## REFRENCES
+## REFERENCES
 
 1. [Git 添加一个文件夹, 并推送到gitee, 步骤](https://blog.csdn.net/jkihi_lin/article/details/79974712)
 2. [鸿基梦 / Git操作总结.txt](https://gitee.com/hjm100/codes/dgbpt1lfnuvjqor52awcs80)

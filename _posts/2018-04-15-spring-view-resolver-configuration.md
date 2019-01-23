@@ -194,7 +194,7 @@ SpringMVC用于处理视图最重要的两个接口是ViewResolver和View。View
 基于Spring支持的这种ViewResolver链模式，我们就可以在SpringMVC应用中同时定义多个ViewResolver，给定不同的order值，这样我们就可以对特定的视图特定处理，以此来支持同一应用中有多种视图类型。注意：像 **InternalResourceViewResolver** 这种能解析所有的视图，即永远能返回一个非空View对象的ViewResolver一定要把它放在 **ViewResolver链的最后面** 。      
 
 
-### REFRENCE
+### REFERENCE
 
 [SpringMVC之视图解析器及解析过程浅析](https://blog.csdn.net/zmx729618/article/details/51554762)
 

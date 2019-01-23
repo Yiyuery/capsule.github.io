@@ -561,7 +561,7 @@ threadPoolTaskExecutor.execute(thread);
 
 ---
 
-## REFRENCES
+## REFERENCES
 
 1.  [ThreadPoolTaskExecutor使用详解](https://blog.csdn.net/foreverling/article/details/78073105)
 2.  [spring线程池ThreadPoolTaskExecutor与阻塞队列BlockingQueue](http://www.cnblogs.com/lic309/p/4186880.html)

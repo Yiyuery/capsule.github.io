@@ -583,7 +583,7 @@ System.out.println(pMap2);//{a=Person(name=Pa), b=Person(name=Pb)}
 
 ## Tables
 
-## REFRENCES
+## REFERENCES
 
 1.  [\[Google Guava\] 2.3-强大的集合工具类：java.util.Collections中未包含的集合工具](http://ifeve.com/google-guava-collectionutilities/)
 2.  [Guava学习笔记：Immutable(不可变)集合](http://www.cnblogs.com/peida/p/Guava_ImmutableCollections.html)

@@ -532,10 +532,10 @@ public class LdapTest {
 
   通过定时同步任务来对LDAP的数据和本地数据库进行同步，然后本地直接操作数据库表格进行查询、分页，此法对LDAP的依赖性降低。
 
-## REFRENCES
+## REFERENCES
 
 1. [LDAP快速入门](http://www.cnblogs.com/obpm/archive/2010/08/28/1811065.html)
-2. [Spring LDAP Refrences Document](https://docs.spring.io/spring-ldap/docs/current/reference/#packaging-overview)
+2. [Spring LDAP REFERENCEs Document](https://docs.spring.io/spring-ldap/docs/current/reference/#packaging-overview)
 
 ---
 

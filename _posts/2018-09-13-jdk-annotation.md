@@ -352,7 +352,7 @@ public class ValidationTest {
 ```
 
 
-## REFRENCES
+## REFERENCES
 
 1. [java自定义注解](https://blog.csdn.net/important0534/article/details/54020691)
 2. [java自定义注解实现前后台参数校验](http://www.cnblogs.com/softidea/p/5709397.html)

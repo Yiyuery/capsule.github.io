@@ -396,7 +396,7 @@ public class Swagger2Markup {
 
 > 然后将文件夹压缩给需要接口的人即可
 
-## REFRENCES
+## REFERENCES
 
 1. [asciidoctor-pdf 【github】](https://github.com/asciidoctor/asciidoctor-pdf/blob/master/docs/theming-guide.adoc)
 

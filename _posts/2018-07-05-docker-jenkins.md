@@ -221,7 +221,7 @@ tag使用的是构建次数作为版本标记
 -   shell脚本遇到问题请自行学习相关知识
 -   轻量级微服务的自动化发布平台，主要实现思路：Jenkins从GitLab中获取源码，构建后生成docker镜像，以Docker容器的方式进行发布，此外，我还将生成的Docker镜像推送到本地的Docker Registry，以供生产环境使用。如此，我们交付的不再是源码，而是Docker镜像，这种方式更加简单高效。
 
-## REFRENCES
+## REFERENCES
 
 1.  [Jenkins Wiki](https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+with+Docker)
 2.  [Jenkins 安装教程](http://www.cnblogs.com/stulzq/p/8627360.html)

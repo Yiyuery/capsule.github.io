@@ -394,7 +394,7 @@ ints.stream().max((o1, o2) > o1.compareTo(o2)).ifPresent(System.out::println);
 ```
 
 
-## REFRENCES
+## REFERENCES
 
 1. [Java8初体验（一）lambda表达式语法](http://ifeve.com/lambda/)
 2. [Java8初体验（二）Stream语法详解](http://ifeve.com/stream/)

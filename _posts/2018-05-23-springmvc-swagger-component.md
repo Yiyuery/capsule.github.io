@@ -175,7 +175,7 @@ public class SwaggerConfig {
 
 ![输入图片说明](https://gitee.com/uploads/images/2018/0523/223715_5ac4ad6b_912956.jpeg "20180111144326047.jpg")
 
-## REFRENCE
+## REFERENCE
 
     1、swagger整合
     https://www.cnblogs.com/jtlgb/p/6734177.html

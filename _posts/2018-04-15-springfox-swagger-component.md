@@ -834,7 +834,7 @@ public class SwaggerConfig {
 
 - 开发接口文件解析服务，分析接口变更并通知对应接口关注人。
 
-## REFRENCE
+## REFERENCE
 
 > springfox
 

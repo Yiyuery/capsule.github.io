@@ -242,7 +242,7 @@ BUILD SUCCESSFUL in 0s
 ```
 
 
-## REFRENCES
+## REFERENCES
 
 > Spring Boot
 
