@@ -39,7 +39,7 @@ tags:
 
 ## 准备工作
 
-![image-20190602131131370](../../../resources/image/2019-06/02.png)
+![image-20190602131131370](../resources/image/2019-06/02.png)
 
 `spring-security-auth`: 中心认证服务器
 
@@ -53,7 +53,7 @@ tags:
 
 在这种模式中，用户必须把自己的密码给客户端，但是客户端不得储存密码。这通常用在用户对客户端高度信任的情况下，比如客户端是操作系统的一部分，或者由一个著名公司出品。而认证服务器只有在其他授权模式无法执行的情况下，才能考虑使用这种模式。
 
-![image-20190602130230999](../../../resources/image/2019-06/01.png)
+![image-20190602130230999](../resources/image/2019-06/01.png)
 
 `它的步骤如下`
 
@@ -78,7 +78,7 @@ tags:
 - scope：表示权限范围，如果与客户端申请的范围一致，此项可省略。
 - state：如果客户端的请求中包含这个参数，认证服务器的回应也必须一模一样包含这个参数。
 
-![image-20190602142143250](../../../resources/image/2019-06/03.png)
+![image-20190602142143250](../resources/image/2019-06/03.png)
 
 其中：
 
@@ -86,9 +86,9 @@ tags:
 
 `http://localhost:8081/authServer/oauth/token?grant_type=password&username=u2&password=12345`
 
-![image-20190602142327790](../../../resources/image/2019-06/04.png)
+![image-20190602142327790](../resources/image/2019-06/04.png)
 
-![image-20190602142649619](../../../resources/image/2019-06/05.png)
+![image-20190602142649619](../resources/image/2019-06/05.png)
 
 比对发现，其实Header中`Authorization`字段中填写的就是`Basic`+`空格`+`Base64(客户端ID:客户端密码)`
 
@@ -96,7 +96,7 @@ tags:
 
 - 为了验证资源服务器有对自己的资源做保护，我们先发起一个获取图书信息的请求。
 
-![image-20190602143342548](../../../resources/image/2019-06/image-20190602143342548.png)
+![image-20190602143342548](../resources/image/2019-06/image-20190602143342548.png)
 
 - 然后我们用获取到的Token再尝试发起一次请求
 
@@ -110,13 +110,13 @@ tags:
 }
 ```
 
-![image-20190602143645001](../../../resources/image/2019-06/image-20190602143645001.png)
+![image-20190602143645001](../resources/image/2019-06/image-20190602143645001.png)
 
 其中请求头中需保证`Authorization`的值为`Bearer`+`空格`+`access_token的值`
 
 - Token过期后请求
 
-![image-20190602153255218](../../../resources/image/2019-06/image-20190602153255218.png)
+![image-20190602153255218](../resources/image/2019-06/image-20190602153255218.png)
 
  ## 核心配置类
 
@@ -233,7 +233,7 @@ tags:
 
 访问`/oauth/token`，先验证了client信息，并作为`authentication`存储在`SecurityContextHolder`中。传递到`TokenEndPoint`的`principal`是client，paramters包含了user的信息和grantType。
 
-![image-20190602153728310](../../../../resources/image/2019-06/image-20190602153728310.png)
+![image-20190602153728310](../../resources/image/2019-06/image-20190602153728310.png)
 
 > 资源服务器关键配置
 
@@ -472,7 +472,7 @@ public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 
 **BearerTokenExtractor**
 
-![image-20190602182920409](../../../resources/image/2019-06/image-20190602182920409.png)
+![image-20190602182920409](../resources/image/2019-06/image-20190602182920409.png)
 
 ```java
 public PreAuthenticatedAuthenticationToken(Object aPrincipal, Object aCredentials) {
@@ -488,7 +488,7 @@ public PreAuthenticatedAuthenticationToken(Object aPrincipal, Object aCredential
 
 > 对于本例中，资源服务器和中心认证服务是分离开的，所以还需进行Token的校验
 
-![image-20190602183954397](../../../resources/image/2019-06/image-20190602183954397.png)
+![image-20190602183954397](../resources/image/2019-06/image-20190602183954397.png)
 
 当请求资源服务器的时候，在通过`OAuth2AuthenticationManager`校验完后`authentication`合法性后，还会调用中心认证服务的`/oauth/check_token`接口进行token的校验。
 
