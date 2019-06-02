@@ -592,8 +592,12 @@ System.out.println(pMap2);//{a=Person(name=Pa), b=Person(name=Pb)}
 5.  [guava之Lists常用示例及newArrayListWithExpectedSize()和newArrayListWithCapacity()详细对比](https://blog.csdn.net/qq_27093465/article/details/53116390)
 
 
-## 微信公众号
+## 更多
 
-<center>
-<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
-</center>
+> 扫码关注“架构探险之道”，回复`文章名称`获取更多源码和文章资源
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222309957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
+
+> 知识星球(扫码加入获取源码和文章资源链接)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222322267.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)

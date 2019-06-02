@@ -359,8 +359,12 @@ public class ValidationTest {
 3. [一小时搞明白自定义注解（Annotation）](https://blog.csdn.net/u013045971/article/details/53433874)
 4. [springboot~为Money类型添加最大值和最小值的注解校验](https://www.cnblogs.com/lori/p/9021681.html)
 
-## 微信公众号
+## 更多
 
-<center>
-<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
-</center>
+> 扫码关注“架构探险之道”，回复`文章名称`获取更多源码和文章资源
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222309957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
+
+> 知识星球(扫码加入获取源码和文章资源链接)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222322267.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)

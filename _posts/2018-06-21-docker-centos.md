@@ -488,10 +488,12 @@ Docker for Mac中在图形化终端上修改如下，填写后“Apply&Restart�
 3.  [Dcoker数据卷挂载](https://yeasy.gitbooks.io/docker_practice/content/data_management/volume.html)
 
 
-## 微信公众号
+## 更多
 
-<center>
-<img src="https://images.gitee.com/uploads/images/2018/0717/215030_8e782063_912956.png" width="50%" height="50%"/>
-</center>
+> 扫码关注“架构探险之道”，回复`文章名称`获取更多源码和文章资源
 
-扫码关注或搜索`架构探险之道`获取最新文章，不积跬步无以至千里，坚持每周一更，坚持技术分享。我和你们一起成长 ^_^ ！
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222309957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
+
+> 知识星球(扫码加入获取源码和文章资源链接)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222322267.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
