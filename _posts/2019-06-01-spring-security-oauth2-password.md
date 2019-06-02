@@ -16,6 +16,16 @@ tags:
 
 # [Spring Security] Spring Security OAuth2（密码模式）
 
+@[TOC](目录)
+
+> 手机用户请`横屏`获取最佳阅读体验，`REFERENCES`中是本文参考的链接，如需要链接和更多资源，可以关注其他博客发布地址。
+
+| 平台     | 地址                                   |
+| -------- | -------------------------------------- |
+| CSDN     | https://blog.csdn.net/sinat_28690417   |
+| 简书     | https://www.jianshu.com/u/3032cc862300 |
+| 个人博客 | https://yiyuery.github.io/NoteBooks/   |
+
 ## 简介
 
 [OAuth](http://en.wikipedia.org/wiki/OAuth)是一个关于授权（authorization）的开放网络标准，在全世界得到广泛应用，目前的版本是2.0版。
@@ -38,8 +48,7 @@ tags:
 
 
 ## 准备工作
-
-![image-20190602131131370](../resources/image/2019-06/02.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602192437649.png)
 
 `spring-security-auth`: 中心认证服务器
 
@@ -52,8 +61,7 @@ tags:
 密码模式（Resource Owner Password Credentials Grant）中，用户向客户端提供自己的用户名和密码。客户端使用这些信息，向"服务商提供商"索要授权。
 
 在这种模式中，用户必须把自己的密码给客户端，但是客户端不得储存密码。这通常用在用户对客户端高度信任的情况下，比如客户端是操作系统的一部分，或者由一个著名公司出品。而认证服务器只有在其他授权模式无法执行的情况下，才能考虑使用这种模式。
-
-![image-20190602130230999](../resources/image/2019-06/01.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602192449838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
 `它的步骤如下`
 
@@ -77,8 +85,7 @@ tags:
 - expires_in：表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间。
 - scope：表示权限范围，如果与客户端申请的范围一致，此项可省略。
 - state：如果客户端的请求中包含这个参数，认证服务器的回应也必须一模一样包含这个参数。
-
-![image-20190602142143250](../resources/image/2019-06/03.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602192503273.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
 其中：
 
@@ -86,9 +93,9 @@ tags:
 
 `http://localhost:8081/authServer/oauth/token?grant_type=password&username=u2&password=12345`
 
-![image-20190602142327790](../resources/image/2019-06/04.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602192513954.png)
 
-![image-20190602142649619](../resources/image/2019-06/05.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602192527893.png)
 
 比对发现，其实Header中`Authorization`字段中填写的就是`Basic`+`空格`+`Base64(客户端ID:客户端密码)`
 
@@ -96,7 +103,8 @@ tags:
 
 - 为了验证资源服务器有对自己的资源做保护，我们先发起一个获取图书信息的请求。
 
-![image-20190602143342548](../resources/image/2019-06/image-20190602143342548.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2019060219294588.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
+
 
 - 然后我们用获取到的Token再尝试发起一次请求
 
@@ -110,13 +118,13 @@ tags:
 }
 ```
 
-![image-20190602143645001](../resources/image/2019-06/image-20190602143645001.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602193032985.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
 其中请求头中需保证`Authorization`的值为`Bearer`+`空格`+`access_token的值`
 
 - Token过期后请求
 
-![image-20190602153255218](../resources/image/2019-06/image-20190602153255218.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602193049953.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
  ## 核心配置类
 
@@ -233,7 +241,7 @@ tags:
 
 访问`/oauth/token`，先验证了client信息，并作为`authentication`存储在`SecurityContextHolder`中。传递到`TokenEndPoint`的`principal`是client，paramters包含了user的信息和grantType。
 
-![image-20190602153728310](../../resources/image/2019-06/image-20190602153728310.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602193108423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
 > 资源服务器关键配置
 
@@ -291,12 +299,12 @@ public class ResourceSecurityConfig extends ResourceServerConfigurerAdapter {
     public RemoteTokenServices remoteTokenServices;
 
     /**
-     * 资源服务器承载资源[REST API]，客户端感兴趣的资源位于  /book/ 。
+     * 资源服务器承载资源[REST API]，客户端感兴趣的资源位于  /book/ 。
      *
      * @param http
      * @throws Exception
-     * @EnableResourceServer注释，适用在OAuth2资源服务器， 实现了Spring Security的过滤器验证的请求传入OAuth2令牌。 
-     * ResourceServerConfigurerAdapter类实现 ResourceServerConfigurer 提供的方法来
+     * @EnableResourceServer注释，适用在OAuth2资源服务器， 实现了Spring Security的过滤器验证的请求传入OAuth2令牌。
+     * ResourceServerConfigurerAdapter类实现 ResourceServerConfigurer 提供的方法来
      * 调整 OAuth2安全保护的访问规则和路径。
      */
     @Override
@@ -472,7 +480,7 @@ public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 
 **BearerTokenExtractor**
 
-![image-20190602182920409](../resources/image/2019-06/image-20190602182920409.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602193129225.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
 ```java
 public PreAuthenticatedAuthenticationToken(Object aPrincipal, Object aCredentials) {
@@ -488,7 +496,7 @@ public PreAuthenticatedAuthenticationToken(Object aPrincipal, Object aCredential
 
 > 对于本例中，资源服务器和中心认证服务是分离开的，所以还需进行Token的校验
 
-![image-20190602183954397](../resources/image/2019-06/image-20190602183954397.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190602193144454.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
 
 当请求资源服务器的时候，在通过`OAuth2AuthenticationManager`校验完后`authentication`合法性后，还会调用中心认证服务的`/oauth/check_token`接口进行token的校验。
 
@@ -525,3 +533,13 @@ security:
 - [OAuth2整合redis和mysql](https://github.com/zth390872451/oauth2-redis-mysql)
 - [Spring Boot 与 OAuth2](http://www.spring4all.com/article/827)
 - [Spring 官网OAuth2开发指南](https://projects.spring.io/spring-security-oauth/docs/oauth2.html)
+
+## 更多
+
+> 扫码关注“架构探险之道”，回复`文章名称`获取更多源码和文章资源
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222309957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
+
+> 知识星球(扫码加入获取源码和文章资源链接)
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190403222322267.jpeg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI4NjkwNDE3,size_16,color_FFFFFF,t_70)
