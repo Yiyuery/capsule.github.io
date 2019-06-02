@@ -116,7 +116,7 @@ public interface CountInterface {
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2018 HangZhou Yiyuery Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2018/7/28 18:15
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
@@ -198,7 +198,7 @@ public void multipleThreadSyncTest(){
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2018 HangZhou Yiyuery Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2018/7/28 18:15
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
@@ -262,7 +262,7 @@ public class Constants {
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2018 HangZhou Yiyuery Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2018/7/28 18:15
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
@@ -379,7 +379,7 @@ private boolean random() {
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2018 HangZhou Yiyuery Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2018/7/28 18:15
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
@@ -454,7 +454,7 @@ public enum LockMethodEnum {
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2018 HangZhou Yiyuery Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2018/7/28 18:15
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.

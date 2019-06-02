@@ -27,7 +27,7 @@ tags:
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2018 HangZhou Yiyuery Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        ${DATE} ${TIME}
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.

@@ -240,7 +240,7 @@ public class SwaggerConfiguration {
                 .title("SWAGGER REST FOR PART OF API")
                 .version("1.0-SNAPSHOT")
                 .description("外部接口文档")
-               .termsOfServiceUrl("http://xiazhaoyang.tech")
+               .termsOfServiceUrl("https://yiyuery.club")
                .contact(new Contact("xiazhaoyang","","xiazhaoyang@live.com"))
                 .license("Apache 2.0")
                 .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")

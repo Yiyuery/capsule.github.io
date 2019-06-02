@@ -80,8 +80,8 @@ tags:
 
 ## 整合gitlab、jenkins实现自动化发布
 
-[Docker 之 GitLab 局域网代码托管](http://xiazhaoyang.tech/docker/2018/07/07/docker-gitlab/)
-[Docker 之 Jenkins自动化部署](http://xiazhaoyang.tech/docker/2018/07/05/docker-jenkins/)
+[Docker 之 GitLab 局域网代码托管](https://yiyuery.club/docker/2018/07/07/docker-gitlab/)
+[Docker 之 Jenkins自动化部署](https://yiyuery.club/docker/2018/07/05/docker-jenkins/)
 
 
 ## 更多

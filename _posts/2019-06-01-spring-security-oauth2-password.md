@@ -24,7 +24,7 @@ tags:
 | -------- | -------------------------------------- |
 | CSDN     | https://blog.csdn.net/sinat_28690417   |
 | 简书     | https://www.jianshu.com/u/3032cc862300 |
-| 个人博客 | https://yiyuery.github.io/NoteBooks/   |
+| 个人博客 | https://yiyuery.club   |
 
 ## 简介
 
@@ -251,7 +251,7 @@ tags:
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2019 HangZhou xiazhaoyang Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2019/5/20 20:57
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
@@ -335,7 +335,7 @@ public class ResourceSecurityConfig extends ResourceServerConfigurerAdapter {
 /*
  * @ProjectName: 编程学习
  * @Copyright:   2019 HangZhou xiazhaoyang Dev, Ltd. All Right Reserved.
- * @address:     http://xiazhaoyang.tech
+ * @address:     https://yiyuery.club
  * @date:        2019/5/26 21:50
  * @email:       xiazhaoyang@live.com
  * @description: 本内容仅限于编程技术学习使用，转发请注明出处.
