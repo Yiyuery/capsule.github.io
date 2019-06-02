@@ -1,5 +1,5 @@
 ---
-title: [Spring Security] Spring Security OAuth2（密码模式）
+title: Spring Security OAuth2（密码模式）
 date: 2019-06-01 21:23:00
 categories:
 - spring
